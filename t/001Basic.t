@@ -7,20 +7,31 @@ use strict;
 
 use Test::More;
 
-plan tests => 1;
+plan tests => 3;
 
 use Net::Evernote::Simple;
+use Log::Log4perl qw(:easy);
+Log::Log4perl->easy_init($ERROR);
 
-my $en = Net::Evernote::Simple->new(
-);
+my $en = Net::Evernote::Simple->new();
 
-is $en->version_check(), 1, "version check";
+ok 1, "loaded ok";
 
-my $note_store = $en->note_store();
+SKIP: {
+    if( !$ENV{ LIVE_TEST } ) {
+        skip "LIVE_TEST not set, skipping live tests", 2;
+    }
 
-my $notebooks =
-  $note_store->listNotebooks( $en->dev_token() );
+    is $en->version_check(), 1, "version check";
 
-for my $notebook (@$notebooks) {
-    print $notebook->name(), "\n";
+    my $note_store = $en->note_store();
+
+    if( !$note_store ) {
+        die "getting notestore failed: $@";
+    }
+
+    my $notebooks =
+      $note_store->listNotebooks( $en->dev_token() );
+    
+    ok scalar @$notebooks > 0, "retrieving notebooks";
 }
