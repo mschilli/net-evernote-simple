@@ -169,11 +169,190 @@ Net::Evernote::Simple - Simple interface to the Evernote API
 
     use Net::Evernote::Simple;
 
-    my $evernote = Net::Evernote::Simple->new();
+    my $evernote = Net::Evernote::Simple->new(
+          # Obtain a developer token from Evernote and put it here
+        dev_token => "XXX",
+    );
+
+      # check if our client API version still works
+    if( ! $evernote->version_check() ) {
+        print "Evernote API version out of date!\n";
+    }
+
+    my $note_store = $evernote->note_store();
+
+    if( !$note_store ) {
+        die "getting notestore failed: $@";
+    }
+
+      # retrieve all of our notebooks
+    my $notebooks =
+      $note_store->listNotebooks( $evernote->dev_token() );
+
+    for my $notebook ( @$notebooks ) {
+       print $notebook->name(), "\n";
+    }
 
 =head1 DESCRIPTION
 
-Net::Evernote::Simple blah blah blah.
+Net::Evernote::Simple enables easy access to the Evernote API with developer
+tokens.
+
+Developer tokens allow read/write access to a user's Evernote data.
+If you don't have a developer token yet, you can obtain one here:
+
+    http://dev.evernote.com/documentation/cloud/chapters/Authentication.php#devtoken
+
+Net::Evernote::Simple then lets you obtain a note_store object which can
+then be used with a variety of functions of the Evernote API described
+here:
+
+    http://dev.evernote.com/documentation/cloud/chapters/
+
+=head1 METHODS
+
+=over 4
+
+=item C<new()>
+
+Constructor, creates a helper object to retrieve a note store object
+later. To access Evernote data, you need a developer token and specify it
+either with the C<dev_token> parameter in the constructor call:
+
+    my $evernote = Net::Evernote::Simple->new(
+        dev_token => "XXX",
+    );
+
+You can omit the C<dev_token> parameter and let Net::Evernote::Simple search
+for a configuration file named C<~/.evernote.yml> containing the developer
+token like
+
+    dev_token: XXX
+
+within the YAML data. To specify an alternative YAML file, use
+
+    my $evernote = Net::Evernote::Simple->new(
+        config_file => "/path/to/evernote.yml",
+    );
+
+The object points to the Evernote production server by default. If you
+want to use the sandbox instead, use 
+
+    my $evernote = Net::Evernote::Simple->new(
+        evernote_host => "sandbox.evernote.com",
+    );
+
+=item C<version_check()>
+
+Contact the Evernote API server and verify if the client API version 
+we're using is still supported. If this fails, please contact the author
+of this module and ask to update the distribution on CPAN.
+
+To make things easier for users of this module, the Evernote 
+
+=item C<dev_token()>
+
+Return the value of the developer token. Many Evernote API functions need
+the value of the token (like C<listNotebooks()> or C<createNote()>).
+
+=item C<note_store()>
+
+Obtain a note_store object from Evernote SDK, which allows you call
+all sorts of Evernote data manipulation functions, like 
+C<listNotebooks()> or C<createNote()>.
+
+=back
+
+One thing to keep in mind when using this library is that the original
+C<EDAMxxx> namespace of the Evernote API has been converted to 
+C<Net::Evernote::Simple::EDAMxxx> to avoid collisions. See the example
+below to get an idea on how to use it. Consult the official Evernote
+API documentation at the link listed above for details on data structures
+used and parameters needed.
+
+=head1 EXAMPLE
+
+   # add a note with a JPG image to notebook "Recipes"
+
+    #!/usr/local/bin/perl
+    use strict;
+    use warnings;
+    
+    use Net::Evernote::Simple;
+    use Sysadm::Install qw( slurp );
+    use Digest::MD5 qw( md5_hex );
+    
+    my( $jpg_file ) = @ARGV;
+    
+    if( !defined $jpg_file ) {
+        die "usage: $0 jpg_file";
+    }
+    
+    my $evernote = Net::Evernote::Simple->new(
+      # Obtain a developer token from Evernote and put it here
+      # or use a ~/.evernote.yml file with a "dev_token" entry
+        # dev_token => "XXX",
+    );
+    
+      # check if our client API version still works
+    if( ! $evernote->version_check() ) {
+        die "Evernote API version out of date!";
+    }
+    
+    my $note_store = $evernote->note_store();
+    
+    if( !$note_store ) {
+       die "getting notestore failed: $@";
+    }
+    
+      # retrieve all of our notebooks
+    my $notebooks =
+       $note_store->listNotebooks( $evernote->dev_token() );
+    
+    my $notebook_guid;
+    
+      # see if we can find one named "Recipes"
+    for my $notebook ( @$notebooks ) {
+        if( $notebook->name() eq "Recipes" ) {
+            $notebook_guid = $notebook->guid();
+            last;
+        }
+    }
+    
+    if( !defined $notebook_guid ) {
+        die "Notebook 'Recipes' not found";
+    }
+    
+    my $data = Net::Evernote::Simple::EDAMTypes::Data->new();
+    
+    my $content = slurp $jpg_file;
+    $data->body( $content );
+    my $hash = md5_hex( $content );
+    $data->bodyHash( $hash );
+    $data->size( length $content );
+    
+    my $r = Net::Evernote::Simple::EDAMTypes::Resource->new();
+    $r->data( $data );
+    $r->mime( "image/jpeg" );
+    $r->noteGuid( "" );
+    
+    my $note = Net::Evernote::Simple::EDAMTypes::Note->new();
+    $note->title( "Our note title" );
+    $note->resources( [$r] );
+    $note->notebookGuid( $notebook_guid );
+    
+    my $enml = <<EOT;
+    <?xml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd">
+    <en-note>
+       <en-media type="image/jpeg" hash="$hash"/>
+    </en-note>
+    EOT
+    
+    $note->content( $enml );
+    
+    $note_store->createNote(
+       $evernote->dev_token(), $note );
 
 =head1 LEGALESE
 
