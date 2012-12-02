@@ -59,11 +59,6 @@ sub new {
         }
     }
 
-    if( !defined $self->{ dev_token } ) {
-        LOGDIE "Developer token argument 'dev_token' missing. ", 
-            "Check $EN_DEV_TOKEN_PAGE on how to obtain one.";
-    }
-    
     my $user_store_uri =
         "https://$self->{ evernote_host }/edam/user";
 
@@ -88,6 +83,11 @@ sub init {
         return 1;
     }
 
+    if( !defined $self->{ dev_token } ) {
+        LOGDIE "Developer token argument 'dev_token' missing. ", 
+            "Check $EN_DEV_TOKEN_PAGE on how to obtain one.";
+    }
+    
     if( ! $self->version_check() ) {
         LOGDIE "Version check failed";
     }

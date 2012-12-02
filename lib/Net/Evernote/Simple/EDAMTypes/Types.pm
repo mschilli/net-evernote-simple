@@ -1120,14 +1120,14 @@ sub read {
       }
       last; };
       /^15$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{attributes} = new Net::Evernote::Simple::EDAMTypes::UserAttributes();
+        $self->{attributes} = Net::Evernote::Simple::EDAMTypes::UserAttributes->new();
         $xfer += $self->{attributes}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^16$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{accounting} = new Net::Evernote::Simple::EDAMTypes::Accounting();
+        $self->{accounting} = Net::Evernote::Simple::EDAMTypes::Accounting->new();
         $xfer += $self->{accounting}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -1596,7 +1596,7 @@ sub read {
       }
       last; };
       /^12$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{applicationData} = new Net::Evernote::Simple::EDAMTypes::LazyMap();
+        $self->{applicationData} = Net::Evernote::Simple::EDAMTypes::LazyMap->new();
         $xfer += $self->{applicationData}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -1772,7 +1772,7 @@ sub read {
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{data} = new Net::Evernote::Simple::EDAMTypes::Data();
+        $self->{data} = Net::Evernote::Simple::EDAMTypes::Data->new();
         $xfer += $self->{data}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -1809,14 +1809,14 @@ sub read {
       }
       last; };
       /^9$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{recognition} = new Net::Evernote::Simple::EDAMTypes::Data();
+        $self->{recognition} = Net::Evernote::Simple::EDAMTypes::Data->new();
         $xfer += $self->{recognition}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^11$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{attributes} = new Net::Evernote::Simple::EDAMTypes::ResourceAttributes();
+        $self->{attributes} = Net::Evernote::Simple::EDAMTypes::ResourceAttributes->new();
         $xfer += $self->{attributes}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -1829,7 +1829,7 @@ sub read {
       }
       last; };
       /^13$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{alternateData} = new Net::Evernote::Simple::EDAMTypes::Data();
+        $self->{alternateData} = Net::Evernote::Simple::EDAMTypes::Data->new();
         $xfer += $self->{alternateData}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -2063,7 +2063,7 @@ sub read {
       }
       last; };
       /^23$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{applicationData} = new Net::Evernote::Simple::EDAMTypes::LazyMap();
+        $self->{applicationData} = Net::Evernote::Simple::EDAMTypes::LazyMap->new();
         $xfer += $self->{applicationData}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -2342,7 +2342,7 @@ sub read {
           for (my $_i40 = 0; $_i40 < $_size36; ++$_i40)
           {
             my $elem41 = undef;
-            $elem41 = new Net::Evernote::Simple::EDAMTypes::Resource();
+            $elem41 = Net::Evernote::Simple::EDAMTypes::Resource->new();
             $xfer += $elem41->read($input);
             push(@{$self->{resources}},$elem41);
           }
@@ -2353,7 +2353,7 @@ sub read {
       }
       last; };
       /^14$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{attributes} = new Net::Evernote::Simple::EDAMTypes::NoteAttributes();
+        $self->{attributes} = Net::Evernote::Simple::EDAMTypes::NoteAttributes->new();
         $xfer += $self->{attributes}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -3285,7 +3285,7 @@ sub read {
       }
       last; };
       /^10$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{publishing} = new Net::Evernote::Simple::EDAMTypes::Publishing();
+        $self->{publishing} = Net::Evernote::Simple::EDAMTypes::Publishing->new();
         $xfer += $self->{publishing}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -3330,7 +3330,7 @@ sub read {
           for (my $_i61 = 0; $_i61 < $_size57; ++$_i61)
           {
             my $elem62 = undef;
-            $elem62 = new Net::Evernote::Simple::EDAMTypes::SharedNotebook();
+            $elem62 = Net::Evernote::Simple::EDAMTypes::SharedNotebook->new();
             $xfer += $elem62->read($input);
             push(@{$self->{sharedNotebooks}},$elem62);
           }

@@ -38,6 +38,7 @@ find sub {
 
     pie sub {
         s/EDAM(?!_)/Net::Evernote::Simple::EDAM/g;
+        s/\bnew (.*?)\(/$1->new(/g;
         $_;
     }, $file;
 

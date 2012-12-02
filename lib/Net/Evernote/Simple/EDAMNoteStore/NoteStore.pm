@@ -121,21 +121,21 @@ sub read {
     SWITCH: for($fid)
     {
       /^0$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{success} = new Net::Evernote::Simple::EDAMNoteStore::SyncState();
+        $self->{success} = Net::Evernote::Simple::EDAMNoteStore::SyncState->new();
         $xfer += $self->{success}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -327,21 +327,21 @@ sub read {
     SWITCH: for($fid)
     {
       /^0$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{success} = new Net::Evernote::Simple::EDAMNoteStore::SyncChunk();
+        $self->{success} = Net::Evernote::Simple::EDAMNoteStore::SyncChunk->new();
         $xfer += $self->{success}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -446,7 +446,7 @@ sub read {
       }
       last; };
       /^4$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{filter} = new Net::Evernote::Simple::EDAMNoteStore::SyncChunkFilter();
+        $self->{filter} = Net::Evernote::Simple::EDAMNoteStore::SyncChunkFilter->new();
         $xfer += $self->{filter}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -534,21 +534,21 @@ sub read {
     SWITCH: for($fid)
     {
       /^0$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{success} = new Net::Evernote::Simple::EDAMNoteStore::SyncChunk();
+        $self->{success} = Net::Evernote::Simple::EDAMNoteStore::SyncChunk->new();
         $xfer += $self->{success}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -633,7 +633,7 @@ sub read {
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{linkedNotebook} = new Net::Evernote::Simple::EDAMTypes::LinkedNotebook();
+        $self->{linkedNotebook} = Net::Evernote::Simple::EDAMTypes::LinkedNotebook->new();
         $xfer += $self->{linkedNotebook}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -715,28 +715,28 @@ sub read {
     SWITCH: for($fid)
     {
       /^0$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{success} = new Net::Evernote::Simple::EDAMNoteStore::SyncState();
+        $self->{success} = Net::Evernote::Simple::EDAMNoteStore::SyncState->new();
         $xfer += $self->{success}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -838,7 +838,7 @@ sub read {
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{linkedNotebook} = new Net::Evernote::Simple::EDAMTypes::LinkedNotebook();
+        $self->{linkedNotebook} = Net::Evernote::Simple::EDAMTypes::LinkedNotebook->new();
         $xfer += $self->{linkedNotebook}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -953,28 +953,28 @@ sub read {
     SWITCH: for($fid)
     {
       /^0$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{success} = new Net::Evernote::Simple::EDAMNoteStore::SyncChunk();
+        $self->{success} = Net::Evernote::Simple::EDAMNoteStore::SyncChunk->new();
         $xfer += $self->{success}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -1134,7 +1134,7 @@ sub read {
           for (my $_i185 = 0; $_i185 < $_size181; ++$_i185)
           {
             my $elem186 = undef;
-            $elem186 = new Net::Evernote::Simple::EDAMTypes::Notebook();
+            $elem186 = Net::Evernote::Simple::EDAMTypes::Notebook->new();
             $xfer += $elem186->read($input);
             push(@{$self->{success}},$elem186);
           }
@@ -1145,14 +1145,14 @@ sub read {
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -1327,28 +1327,28 @@ sub read {
     SWITCH: for($fid)
     {
       /^0$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{success} = new Net::Evernote::Simple::EDAMTypes::Notebook();
+        $self->{success} = Net::Evernote::Simple::EDAMTypes::Notebook->new();
         $xfer += $self->{success}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -1500,21 +1500,21 @@ sub read {
     SWITCH: for($fid)
     {
       /^0$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{success} = new Net::Evernote::Simple::EDAMTypes::Notebook();
+        $self->{success} = Net::Evernote::Simple::EDAMTypes::Notebook->new();
         $xfer += $self->{success}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -1599,7 +1599,7 @@ sub read {
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notebook} = new Net::Evernote::Simple::EDAMTypes::Notebook();
+        $self->{notebook} = Net::Evernote::Simple::EDAMTypes::Notebook->new();
         $xfer += $self->{notebook}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -1677,21 +1677,21 @@ sub read {
     SWITCH: for($fid)
     {
       /^0$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{success} = new Net::Evernote::Simple::EDAMTypes::Notebook();
+        $self->{success} = Net::Evernote::Simple::EDAMTypes::Notebook->new();
         $xfer += $self->{success}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -1776,7 +1776,7 @@ sub read {
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notebook} = new Net::Evernote::Simple::EDAMTypes::Notebook();
+        $self->{notebook} = Net::Evernote::Simple::EDAMTypes::Notebook->new();
         $xfer += $self->{notebook}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -1864,21 +1864,21 @@ sub read {
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -2055,21 +2055,21 @@ sub read {
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -2229,7 +2229,7 @@ sub read {
           for (my $_i192 = 0; $_i192 < $_size188; ++$_i192)
           {
             my $elem193 = undef;
-            $elem193 = new Net::Evernote::Simple::EDAMTypes::Tag();
+            $elem193 = Net::Evernote::Simple::EDAMTypes::Tag->new();
             $xfer += $elem193->read($input);
             push(@{$self->{success}},$elem193);
           }
@@ -2240,14 +2240,14 @@ sub read {
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -2430,7 +2430,7 @@ sub read {
           for (my $_i199 = 0; $_i199 < $_size195; ++$_i199)
           {
             my $elem200 = undef;
-            $elem200 = new Net::Evernote::Simple::EDAMTypes::Tag();
+            $elem200 = Net::Evernote::Simple::EDAMTypes::Tag->new();
             $xfer += $elem200->read($input);
             push(@{$self->{success}},$elem200);
           }
@@ -2441,21 +2441,21 @@ sub read {
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -2635,28 +2635,28 @@ sub read {
     SWITCH: for($fid)
     {
       /^0$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{success} = new Net::Evernote::Simple::EDAMTypes::Tag();
+        $self->{success} = Net::Evernote::Simple::EDAMTypes::Tag->new();
         $xfer += $self->{success}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -2746,7 +2746,7 @@ sub read {
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{tag} = new Net::Evernote::Simple::EDAMTypes::Tag();
+        $self->{tag} = Net::Evernote::Simple::EDAMTypes::Tag->new();
         $xfer += $self->{tag}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -2828,28 +2828,28 @@ sub read {
     SWITCH: for($fid)
     {
       /^0$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{success} = new Net::Evernote::Simple::EDAMTypes::Tag();
+        $self->{success} = Net::Evernote::Simple::EDAMTypes::Tag->new();
         $xfer += $self->{success}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -2939,7 +2939,7 @@ sub read {
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{tag} = new Net::Evernote::Simple::EDAMTypes::Tag();
+        $self->{tag} = Net::Evernote::Simple::EDAMTypes::Tag->new();
         $xfer += $self->{tag}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -3027,21 +3027,21 @@ sub read {
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -3208,21 +3208,21 @@ sub read {
     SWITCH: for($fid)
     {
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -3394,21 +3394,21 @@ sub read {
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -3568,7 +3568,7 @@ sub read {
           for (my $_i206 = 0; $_i206 < $_size202; ++$_i206)
           {
             my $elem207 = undef;
-            $elem207 = new Net::Evernote::Simple::EDAMTypes::SavedSearch();
+            $elem207 = Net::Evernote::Simple::EDAMTypes::SavedSearch->new();
             $xfer += $elem207->read($input);
             push(@{$self->{success}},$elem207);
           }
@@ -3579,14 +3579,14 @@ sub read {
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -3761,28 +3761,28 @@ sub read {
     SWITCH: for($fid)
     {
       /^0$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{success} = new Net::Evernote::Simple::EDAMTypes::SavedSearch();
+        $self->{success} = Net::Evernote::Simple::EDAMTypes::SavedSearch->new();
         $xfer += $self->{success}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -3872,7 +3872,7 @@ sub read {
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{search} = new Net::Evernote::Simple::EDAMTypes::SavedSearch();
+        $self->{search} = Net::Evernote::Simple::EDAMTypes::SavedSearch->new();
         $xfer += $self->{search}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -3950,21 +3950,21 @@ sub read {
     SWITCH: for($fid)
     {
       /^0$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{success} = new Net::Evernote::Simple::EDAMTypes::SavedSearch();
+        $self->{success} = Net::Evernote::Simple::EDAMTypes::SavedSearch->new();
         $xfer += $self->{success}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -4049,7 +4049,7 @@ sub read {
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{search} = new Net::Evernote::Simple::EDAMTypes::SavedSearch();
+        $self->{search} = Net::Evernote::Simple::EDAMTypes::SavedSearch->new();
         $xfer += $self->{search}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -4137,21 +4137,21 @@ sub read {
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -4328,21 +4328,21 @@ sub read {
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -4440,7 +4440,7 @@ sub read {
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{filter} = new Net::Evernote::Simple::EDAMNoteStore::NoteFilter();
+        $self->{filter} = Net::Evernote::Simple::EDAMNoteStore::NoteFilter->new();
         $xfer += $self->{filter}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -4544,28 +4544,28 @@ sub read {
     SWITCH: for($fid)
     {
       /^0$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{success} = new Net::Evernote::Simple::EDAMNoteStore::NoteList();
+        $self->{success} = Net::Evernote::Simple::EDAMNoteStore::NoteList->new();
         $xfer += $self->{success}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -4659,7 +4659,7 @@ sub read {
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{filter} = new Net::Evernote::Simple::EDAMNoteStore::NoteFilter();
+        $self->{filter} = Net::Evernote::Simple::EDAMNoteStore::NoteFilter->new();
         $xfer += $self->{filter}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -4758,21 +4758,21 @@ sub read {
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -4874,7 +4874,7 @@ sub read {
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{filter} = new Net::Evernote::Simple::EDAMNoteStore::NoteFilter();
+        $self->{filter} = Net::Evernote::Simple::EDAMNoteStore::NoteFilter->new();
         $xfer += $self->{filter}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -4893,7 +4893,7 @@ sub read {
       }
       last; };
       /^5$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{resultSpec} = new Net::Evernote::Simple::EDAMNoteStore::NotesMetadataResultSpec();
+        $self->{resultSpec} = Net::Evernote::Simple::EDAMNoteStore::NotesMetadataResultSpec->new();
         $xfer += $self->{resultSpec}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -4990,28 +4990,28 @@ sub read {
     SWITCH: for($fid)
     {
       /^0$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{success} = new Net::Evernote::Simple::EDAMNoteStore::NotesMetadataList();
+        $self->{success} = Net::Evernote::Simple::EDAMNoteStore::NotesMetadataList->new();
         $xfer += $self->{success}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -5105,7 +5105,7 @@ sub read {
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{filter} = new Net::Evernote::Simple::EDAMNoteStore::NoteFilter();
+        $self->{filter} = Net::Evernote::Simple::EDAMNoteStore::NoteFilter->new();
         $xfer += $self->{filter}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -5198,28 +5198,28 @@ sub read {
     SWITCH: for($fid)
     {
       /^0$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{success} = new Net::Evernote::Simple::EDAMNoteStore::NoteCollectionCounts();
+        $self->{success} = Net::Evernote::Simple::EDAMNoteStore::NoteCollectionCounts->new();
         $xfer += $self->{success}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -5450,28 +5450,28 @@ sub read {
     SWITCH: for($fid)
     {
       /^0$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{success} = new Net::Evernote::Simple::EDAMTypes::Note();
+        $self->{success} = Net::Evernote::Simple::EDAMTypes::Note->new();
         $xfer += $self->{success}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -5642,28 +5642,28 @@ sub read {
     SWITCH: for($fid)
     {
       /^0$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{success} = new Net::Evernote::Simple::EDAMTypes::LazyMap();
+        $self->{success} = Net::Evernote::Simple::EDAMTypes::LazyMap->new();
         $xfer += $self->{success}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -5855,21 +5855,21 @@ sub read {
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -6076,21 +6076,21 @@ sub read {
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -6282,21 +6282,21 @@ sub read {
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -6473,21 +6473,21 @@ sub read {
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -6694,21 +6694,21 @@ sub read {
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -6885,21 +6885,21 @@ sub read {
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -7088,21 +7088,21 @@ sub read {
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -7201,7 +7201,7 @@ sub read {
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{note} = new Net::Evernote::Simple::EDAMTypes::Note();
+        $self->{note} = Net::Evernote::Simple::EDAMTypes::Note->new();
         $xfer += $self->{note}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -7283,28 +7283,28 @@ sub read {
     SWITCH: for($fid)
     {
       /^0$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{success} = new Net::Evernote::Simple::EDAMTypes::Note();
+        $self->{success} = Net::Evernote::Simple::EDAMTypes::Note->new();
         $xfer += $self->{success}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -7394,7 +7394,7 @@ sub read {
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{note} = new Net::Evernote::Simple::EDAMTypes::Note();
+        $self->{note} = Net::Evernote::Simple::EDAMTypes::Note->new();
         $xfer += $self->{note}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -7476,28 +7476,28 @@ sub read {
     SWITCH: for($fid)
     {
       /^0$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{success} = new Net::Evernote::Simple::EDAMTypes::Note();
+        $self->{success} = Net::Evernote::Simple::EDAMTypes::Note->new();
         $xfer += $self->{success}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -7674,21 +7674,21 @@ sub read {
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -7865,21 +7865,21 @@ sub read {
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -8077,21 +8077,21 @@ sub read {
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -8249,14 +8249,14 @@ sub read {
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -8437,28 +8437,28 @@ sub read {
     SWITCH: for($fid)
     {
       /^0$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{success} = new Net::Evernote::Simple::EDAMTypes::Note();
+        $self->{success} = Net::Evernote::Simple::EDAMTypes::Note->new();
         $xfer += $self->{success}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -8637,7 +8637,7 @@ sub read {
           for (my $_i227 = 0; $_i227 < $_size223; ++$_i227)
           {
             my $elem228 = undef;
-            $elem228 = new Net::Evernote::Simple::EDAMNoteStore::NoteVersionId();
+            $elem228 = Net::Evernote::Simple::EDAMNoteStore::NoteVersionId->new();
             $xfer += $elem228->read($input);
             push(@{$self->{success}},$elem228);
           }
@@ -8648,21 +8648,21 @@ sub read {
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -8902,28 +8902,28 @@ sub read {
     SWITCH: for($fid)
     {
       /^0$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{success} = new Net::Evernote::Simple::EDAMTypes::Note();
+        $self->{success} = Net::Evernote::Simple::EDAMTypes::Note->new();
         $xfer += $self->{success}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -9154,28 +9154,28 @@ sub read {
     SWITCH: for($fid)
     {
       /^0$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{success} = new Net::Evernote::Simple::EDAMTypes::Resource();
+        $self->{success} = Net::Evernote::Simple::EDAMTypes::Resource->new();
         $xfer += $self->{success}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -9346,28 +9346,28 @@ sub read {
     SWITCH: for($fid)
     {
       /^0$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{success} = new Net::Evernote::Simple::EDAMTypes::LazyMap();
+        $self->{success} = Net::Evernote::Simple::EDAMTypes::LazyMap->new();
         $xfer += $self->{success}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -9559,21 +9559,21 @@ sub read {
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -9780,21 +9780,21 @@ sub read {
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -9986,21 +9986,21 @@ sub read {
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -10090,7 +10090,7 @@ sub read {
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{resource} = new Net::Evernote::Simple::EDAMTypes::Resource();
+        $self->{resource} = Net::Evernote::Simple::EDAMTypes::Resource->new();
         $xfer += $self->{resource}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -10178,21 +10178,21 @@ sub read {
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -10369,21 +10369,21 @@ sub read {
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -10614,28 +10614,28 @@ sub read {
     SWITCH: for($fid)
     {
       /^0$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{success} = new Net::Evernote::Simple::EDAMTypes::Resource();
+        $self->{success} = Net::Evernote::Simple::EDAMTypes::Resource->new();
         $xfer += $self->{success}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -10812,21 +10812,21 @@ sub read {
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -11003,21 +11003,21 @@ sub read {
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -11188,28 +11188,28 @@ sub read {
     SWITCH: for($fid)
     {
       /^0$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{success} = new Net::Evernote::Simple::EDAMTypes::ResourceAttributes();
+        $self->{success} = Net::Evernote::Simple::EDAMTypes::ResourceAttributes->new();
         $xfer += $self->{success}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -11367,14 +11367,14 @@ sub read {
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -11459,7 +11459,7 @@ sub read {
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{adParameters} = new Net::Evernote::Simple::EDAMNoteStore::AdParameters();
+        $self->{adParameters} = Net::Evernote::Simple::EDAMNoteStore::AdParameters->new();
         $xfer += $self->{adParameters}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -11545,7 +11545,7 @@ sub read {
           for (my $_i234 = 0; $_i234 < $_size230; ++$_i234)
           {
             my $elem235 = undef;
-            $elem235 = new Net::Evernote::Simple::EDAMTypes::Ad();
+            $elem235 = Net::Evernote::Simple::EDAMTypes::Ad->new();
             $xfer += $elem235->read($input);
             push(@{$self->{success}},$elem235);
           }
@@ -11556,14 +11556,14 @@ sub read {
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -11657,7 +11657,7 @@ sub read {
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{adParameters} = new Net::Evernote::Simple::EDAMNoteStore::AdParameters();
+        $self->{adParameters} = Net::Evernote::Simple::EDAMNoteStore::AdParameters->new();
         $xfer += $self->{adParameters}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -11735,21 +11735,21 @@ sub read {
     SWITCH: for($fid)
     {
       /^0$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{success} = new Net::Evernote::Simple::EDAMTypes::Ad();
+        $self->{success} = Net::Evernote::Simple::EDAMTypes::Ad->new();
         $xfer += $self->{success}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -11911,21 +11911,21 @@ sub read {
     SWITCH: for($fid)
     {
       /^0$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{success} = new Net::Evernote::Simple::EDAMTypes::Notebook();
+        $self->{success} = Net::Evernote::Simple::EDAMTypes::Notebook->new();
         $xfer += $self->{success}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -12010,7 +12010,7 @@ sub read {
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{sharedNotebook} = new Net::Evernote::Simple::EDAMTypes::SharedNotebook();
+        $self->{sharedNotebook} = Net::Evernote::Simple::EDAMTypes::SharedNotebook->new();
         $xfer += $self->{sharedNotebook}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -12092,28 +12092,28 @@ sub read {
     SWITCH: for($fid)
     {
       /^0$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{success} = new Net::Evernote::Simple::EDAMTypes::SharedNotebook();
+        $self->{success} = Net::Evernote::Simple::EDAMTypes::SharedNotebook->new();
         $xfer += $self->{success}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -12341,21 +12341,21 @@ sub read {
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -12519,7 +12519,7 @@ sub read {
           for (my $_i248 = 0; $_i248 < $_size244; ++$_i248)
           {
             my $elem249 = undef;
-            $elem249 = new Net::Evernote::Simple::EDAMTypes::SharedNotebook();
+            $elem249 = Net::Evernote::Simple::EDAMTypes::SharedNotebook->new();
             $xfer += $elem249->read($input);
             push(@{$self->{success}},$elem249);
           }
@@ -12530,21 +12530,21 @@ sub read {
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -12751,21 +12751,21 @@ sub read {
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -12855,7 +12855,7 @@ sub read {
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{linkedNotebook} = new Net::Evernote::Simple::EDAMTypes::LinkedNotebook();
+        $self->{linkedNotebook} = Net::Evernote::Simple::EDAMTypes::LinkedNotebook->new();
         $xfer += $self->{linkedNotebook}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -12937,28 +12937,28 @@ sub read {
     SWITCH: for($fid)
     {
       /^0$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{success} = new Net::Evernote::Simple::EDAMTypes::LinkedNotebook();
+        $self->{success} = Net::Evernote::Simple::EDAMTypes::LinkedNotebook->new();
         $xfer += $self->{success}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -13048,7 +13048,7 @@ sub read {
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{linkedNotebook} = new Net::Evernote::Simple::EDAMTypes::LinkedNotebook();
+        $self->{linkedNotebook} = Net::Evernote::Simple::EDAMTypes::LinkedNotebook->new();
         $xfer += $self->{linkedNotebook}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -13136,21 +13136,21 @@ sub read {
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -13314,7 +13314,7 @@ sub read {
           for (my $_i262 = 0; $_i262 < $_size258; ++$_i262)
           {
             my $elem263 = undef;
-            $elem263 = new Net::Evernote::Simple::EDAMTypes::LinkedNotebook();
+            $elem263 = Net::Evernote::Simple::EDAMTypes::LinkedNotebook->new();
             $xfer += $elem263->read($input);
             push(@{$self->{success}},$elem263);
           }
@@ -13325,21 +13325,21 @@ sub read {
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -13525,21 +13525,21 @@ sub read {
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -13710,28 +13710,28 @@ sub read {
     SWITCH: for($fid)
     {
       /^0$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{success} = new Net::Evernote::Simple::EDAMUserStore::AuthenticationResult();
+        $self->{success} = Net::Evernote::Simple::EDAMUserStore::AuthenticationResult->new();
         $xfer += $self->{success}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -13887,28 +13887,28 @@ sub read {
     SWITCH: for($fid)
     {
       /^0$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{success} = new Net::Evernote::Simple::EDAMTypes::SharedNotebook();
+        $self->{success} = Net::Evernote::Simple::EDAMTypes::SharedNotebook->new();
         $xfer += $self->{success}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -13998,7 +13998,7 @@ sub read {
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{parameters} = new Net::Evernote::Simple::EDAMNoteStore::NoteEmailParameters();
+        $self->{parameters} = Net::Evernote::Simple::EDAMNoteStore::NoteEmailParameters->new();
         $xfer += $self->{parameters}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -14076,21 +14076,21 @@ sub read {
     SWITCH: for($fid)
     {
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -14262,21 +14262,21 @@ sub read {
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -14443,21 +14443,21 @@ sub read {
     SWITCH: for($fid)
     {
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -14623,28 +14623,28 @@ sub read {
     SWITCH: for($fid)
     {
       /^0$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{success} = new Net::Evernote::Simple::EDAMUserStore::AuthenticationResult();
+        $self->{success} = Net::Evernote::Simple::EDAMUserStore::AuthenticationResult->new();
         $xfer += $self->{success}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^1$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{userException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException();
+        $self->{userException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException->new();
         $xfer += $self->{userException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{notFoundException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException();
+        $self->{notFoundException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMNotFoundException->new();
         $xfer += $self->{notFoundException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^3$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{systemException} = new Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException();
+        $self->{systemException} = Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException->new();
         $xfer += $self->{systemException}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -15980,7 +15980,7 @@ sub send_getSyncState{
   my $authenticationToken = shift;
 
   $self->{output}->writeMessageBegin('getSyncState', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getSyncState_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getSyncState_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->write($self->{output});
   $self->{output}->writeMessageEnd();
@@ -15996,12 +15996,12 @@ sub recv_getSyncState{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getSyncState_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getSyncState_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -16035,7 +16035,7 @@ sub send_getSyncChunk{
   my $fullSyncOnly = shift;
 
   $self->{output}->writeMessageBegin('getSyncChunk', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getSyncChunk_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getSyncChunk_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{afterUSN} = $afterUSN;
   $args->{maxEntries} = $maxEntries;
@@ -16054,12 +16054,12 @@ sub recv_getSyncChunk{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getSyncChunk_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getSyncChunk_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -16093,7 +16093,7 @@ sub send_getFilteredSyncChunk{
   my $filter = shift;
 
   $self->{output}->writeMessageBegin('getFilteredSyncChunk', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getFilteredSyncChunk_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getFilteredSyncChunk_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{afterUSN} = $afterUSN;
   $args->{maxEntries} = $maxEntries;
@@ -16112,12 +16112,12 @@ sub recv_getFilteredSyncChunk{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getFilteredSyncChunk_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getFilteredSyncChunk_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -16147,7 +16147,7 @@ sub send_getLinkedNotebookSyncState{
   my $linkedNotebook = shift;
 
   $self->{output}->writeMessageBegin('getLinkedNotebookSyncState', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getLinkedNotebookSyncState_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getLinkedNotebookSyncState_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{linkedNotebook} = $linkedNotebook;
   $args->write($self->{output});
@@ -16164,12 +16164,12 @@ sub recv_getLinkedNotebookSyncState{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getLinkedNotebookSyncState_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getLinkedNotebookSyncState_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -16208,7 +16208,7 @@ sub send_getLinkedNotebookSyncChunk{
   my $fullSyncOnly = shift;
 
   $self->{output}->writeMessageBegin('getLinkedNotebookSyncChunk', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getLinkedNotebookSyncChunk_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getLinkedNotebookSyncChunk_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{linkedNotebook} = $linkedNotebook;
   $args->{afterUSN} = $afterUSN;
@@ -16228,12 +16228,12 @@ sub recv_getLinkedNotebookSyncChunk{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getLinkedNotebookSyncChunk_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getLinkedNotebookSyncChunk_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -16264,7 +16264,7 @@ sub send_listNotebooks{
   my $authenticationToken = shift;
 
   $self->{output}->writeMessageBegin('listNotebooks', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_listNotebooks_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_listNotebooks_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->write($self->{output});
   $self->{output}->writeMessageEnd();
@@ -16280,12 +16280,12 @@ sub recv_listNotebooks{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_listNotebooks_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_listNotebooks_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -16315,7 +16315,7 @@ sub send_getNotebook{
   my $guid = shift;
 
   $self->{output}->writeMessageBegin('getNotebook', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNotebook_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNotebook_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{guid} = $guid;
   $args->write($self->{output});
@@ -16332,12 +16332,12 @@ sub recv_getNotebook{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNotebook_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNotebook_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -16368,7 +16368,7 @@ sub send_getDefaultNotebook{
   my $authenticationToken = shift;
 
   $self->{output}->writeMessageBegin('getDefaultNotebook', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getDefaultNotebook_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getDefaultNotebook_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->write($self->{output});
   $self->{output}->writeMessageEnd();
@@ -16384,12 +16384,12 @@ sub recv_getDefaultNotebook{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getDefaultNotebook_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getDefaultNotebook_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -16419,7 +16419,7 @@ sub send_createNotebook{
   my $notebook = shift;
 
   $self->{output}->writeMessageBegin('createNotebook', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_createNotebook_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_createNotebook_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{notebook} = $notebook;
   $args->write($self->{output});
@@ -16436,12 +16436,12 @@ sub recv_createNotebook{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_createNotebook_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_createNotebook_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -16471,7 +16471,7 @@ sub send_updateNotebook{
   my $notebook = shift;
 
   $self->{output}->writeMessageBegin('updateNotebook', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_updateNotebook_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_updateNotebook_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{notebook} = $notebook;
   $args->write($self->{output});
@@ -16488,12 +16488,12 @@ sub recv_updateNotebook{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_updateNotebook_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_updateNotebook_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -16526,7 +16526,7 @@ sub send_expungeNotebook{
   my $guid = shift;
 
   $self->{output}->writeMessageBegin('expungeNotebook', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeNotebook_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeNotebook_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{guid} = $guid;
   $args->write($self->{output});
@@ -16543,12 +16543,12 @@ sub recv_expungeNotebook{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeNotebook_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeNotebook_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -16579,7 +16579,7 @@ sub send_listTags{
   my $authenticationToken = shift;
 
   $self->{output}->writeMessageBegin('listTags', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_listTags_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_listTags_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->write($self->{output});
   $self->{output}->writeMessageEnd();
@@ -16595,12 +16595,12 @@ sub recv_listTags{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_listTags_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_listTags_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -16630,7 +16630,7 @@ sub send_listTagsByNotebook{
   my $notebookGuid = shift;
 
   $self->{output}->writeMessageBegin('listTagsByNotebook', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_listTagsByNotebook_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_listTagsByNotebook_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{notebookGuid} = $notebookGuid;
   $args->write($self->{output});
@@ -16647,12 +16647,12 @@ sub recv_listTagsByNotebook{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_listTagsByNotebook_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_listTagsByNotebook_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -16685,7 +16685,7 @@ sub send_getTag{
   my $guid = shift;
 
   $self->{output}->writeMessageBegin('getTag', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getTag_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getTag_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{guid} = $guid;
   $args->write($self->{output});
@@ -16702,12 +16702,12 @@ sub recv_getTag{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getTag_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getTag_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -16740,7 +16740,7 @@ sub send_createTag{
   my $tag = shift;
 
   $self->{output}->writeMessageBegin('createTag', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_createTag_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_createTag_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{tag} = $tag;
   $args->write($self->{output});
@@ -16757,12 +16757,12 @@ sub recv_createTag{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_createTag_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_createTag_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -16795,7 +16795,7 @@ sub send_updateTag{
   my $tag = shift;
 
   $self->{output}->writeMessageBegin('updateTag', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_updateTag_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_updateTag_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{tag} = $tag;
   $args->write($self->{output});
@@ -16812,12 +16812,12 @@ sub recv_updateTag{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_updateTag_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_updateTag_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -16850,7 +16850,7 @@ sub send_untagAll{
   my $guid = shift;
 
   $self->{output}->writeMessageBegin('untagAll', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_untagAll_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_untagAll_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{guid} = $guid;
   $args->write($self->{output});
@@ -16867,12 +16867,12 @@ sub recv_untagAll{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_untagAll_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_untagAll_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -16902,7 +16902,7 @@ sub send_expungeTag{
   my $guid = shift;
 
   $self->{output}->writeMessageBegin('expungeTag', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeTag_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeTag_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{guid} = $guid;
   $args->write($self->{output});
@@ -16919,12 +16919,12 @@ sub recv_expungeTag{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeTag_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeTag_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -16955,7 +16955,7 @@ sub send_listSearches{
   my $authenticationToken = shift;
 
   $self->{output}->writeMessageBegin('listSearches', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_listSearches_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_listSearches_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->write($self->{output});
   $self->{output}->writeMessageEnd();
@@ -16971,12 +16971,12 @@ sub recv_listSearches{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_listSearches_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_listSearches_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -17006,7 +17006,7 @@ sub send_getSearch{
   my $guid = shift;
 
   $self->{output}->writeMessageBegin('getSearch', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getSearch_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getSearch_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{guid} = $guid;
   $args->write($self->{output});
@@ -17023,12 +17023,12 @@ sub recv_getSearch{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getSearch_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getSearch_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -17061,7 +17061,7 @@ sub send_createSearch{
   my $search = shift;
 
   $self->{output}->writeMessageBegin('createSearch', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_createSearch_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_createSearch_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{search} = $search;
   $args->write($self->{output});
@@ -17078,12 +17078,12 @@ sub recv_createSearch{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_createSearch_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_createSearch_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -17113,7 +17113,7 @@ sub send_updateSearch{
   my $search = shift;
 
   $self->{output}->writeMessageBegin('updateSearch', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_updateSearch_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_updateSearch_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{search} = $search;
   $args->write($self->{output});
@@ -17130,12 +17130,12 @@ sub recv_updateSearch{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_updateSearch_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_updateSearch_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -17168,7 +17168,7 @@ sub send_expungeSearch{
   my $guid = shift;
 
   $self->{output}->writeMessageBegin('expungeSearch', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeSearch_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeSearch_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{guid} = $guid;
   $args->write($self->{output});
@@ -17185,12 +17185,12 @@ sub recv_expungeSearch{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeSearch_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeSearch_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -17227,7 +17227,7 @@ sub send_findNotes{
   my $maxNotes = shift;
 
   $self->{output}->writeMessageBegin('findNotes', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_findNotes_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_findNotes_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{filter} = $filter;
   $args->{offset} = $offset;
@@ -17246,12 +17246,12 @@ sub recv_findNotes{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_findNotes_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_findNotes_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -17286,7 +17286,7 @@ sub send_findNoteOffset{
   my $guid = shift;
 
   $self->{output}->writeMessageBegin('findNoteOffset', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_findNoteOffset_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_findNoteOffset_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{filter} = $filter;
   $args->{guid} = $guid;
@@ -17304,12 +17304,12 @@ sub recv_findNoteOffset{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_findNoteOffset_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_findNoteOffset_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -17348,7 +17348,7 @@ sub send_findNotesMetadata{
   my $resultSpec = shift;
 
   $self->{output}->writeMessageBegin('findNotesMetadata', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_findNotesMetadata_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_findNotesMetadata_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{filter} = $filter;
   $args->{offset} = $offset;
@@ -17368,12 +17368,12 @@ sub recv_findNotesMetadata{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_findNotesMetadata_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_findNotesMetadata_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -17408,7 +17408,7 @@ sub send_findNoteCounts{
   my $withTrash = shift;
 
   $self->{output}->writeMessageBegin('findNoteCounts', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_findNoteCounts_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_findNoteCounts_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{filter} = $filter;
   $args->{withTrash} = $withTrash;
@@ -17426,12 +17426,12 @@ sub recv_findNoteCounts{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_findNoteCounts_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_findNoteCounts_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -17472,7 +17472,7 @@ sub send_getNote{
   my $withResourcesAlternateData = shift;
 
   $self->{output}->writeMessageBegin('getNote', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNote_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNote_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{guid} = $guid;
   $args->{withContent} = $withContent;
@@ -17493,12 +17493,12 @@ sub recv_getNote{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNote_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNote_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -17531,7 +17531,7 @@ sub send_getNoteApplicationData{
   my $guid = shift;
 
   $self->{output}->writeMessageBegin('getNoteApplicationData', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNoteApplicationData_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNoteApplicationData_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{guid} = $guid;
   $args->write($self->{output});
@@ -17548,12 +17548,12 @@ sub recv_getNoteApplicationData{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNoteApplicationData_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNoteApplicationData_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -17588,7 +17588,7 @@ sub send_getNoteApplicationDataEntry{
   my $key = shift;
 
   $self->{output}->writeMessageBegin('getNoteApplicationDataEntry', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNoteApplicationDataEntry_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNoteApplicationDataEntry_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{guid} = $guid;
   $args->{key} = $key;
@@ -17606,12 +17606,12 @@ sub recv_getNoteApplicationDataEntry{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNoteApplicationDataEntry_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNoteApplicationDataEntry_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -17648,7 +17648,7 @@ sub send_setNoteApplicationDataEntry{
   my $value = shift;
 
   $self->{output}->writeMessageBegin('setNoteApplicationDataEntry', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_setNoteApplicationDataEntry_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_setNoteApplicationDataEntry_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{guid} = $guid;
   $args->{key} = $key;
@@ -17667,12 +17667,12 @@ sub recv_setNoteApplicationDataEntry{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_setNoteApplicationDataEntry_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_setNoteApplicationDataEntry_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -17707,7 +17707,7 @@ sub send_unsetNoteApplicationDataEntry{
   my $key = shift;
 
   $self->{output}->writeMessageBegin('unsetNoteApplicationDataEntry', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_unsetNoteApplicationDataEntry_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_unsetNoteApplicationDataEntry_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{guid} = $guid;
   $args->{key} = $key;
@@ -17725,12 +17725,12 @@ sub recv_unsetNoteApplicationDataEntry{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_unsetNoteApplicationDataEntry_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_unsetNoteApplicationDataEntry_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -17763,7 +17763,7 @@ sub send_getNoteContent{
   my $guid = shift;
 
   $self->{output}->writeMessageBegin('getNoteContent', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNoteContent_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNoteContent_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{guid} = $guid;
   $args->write($self->{output});
@@ -17780,12 +17780,12 @@ sub recv_getNoteContent{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNoteContent_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNoteContent_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -17822,7 +17822,7 @@ sub send_getNoteSearchText{
   my $tokenizeForIndexing = shift;
 
   $self->{output}->writeMessageBegin('getNoteSearchText', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNoteSearchText_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNoteSearchText_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{guid} = $guid;
   $args->{noteOnly} = $noteOnly;
@@ -17841,12 +17841,12 @@ sub recv_getNoteSearchText{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNoteSearchText_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNoteSearchText_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -17879,7 +17879,7 @@ sub send_getResourceSearchText{
   my $guid = shift;
 
   $self->{output}->writeMessageBegin('getResourceSearchText', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceSearchText_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceSearchText_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{guid} = $guid;
   $args->write($self->{output});
@@ -17896,12 +17896,12 @@ sub recv_getResourceSearchText{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceSearchText_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceSearchText_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -17934,7 +17934,7 @@ sub send_getNoteTagNames{
   my $guid = shift;
 
   $self->{output}->writeMessageBegin('getNoteTagNames', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNoteTagNames_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNoteTagNames_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{guid} = $guid;
   $args->write($self->{output});
@@ -17951,12 +17951,12 @@ sub recv_getNoteTagNames{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNoteTagNames_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNoteTagNames_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -17989,7 +17989,7 @@ sub send_createNote{
   my $note = shift;
 
   $self->{output}->writeMessageBegin('createNote', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_createNote_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_createNote_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{note} = $note;
   $args->write($self->{output});
@@ -18006,12 +18006,12 @@ sub recv_createNote{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_createNote_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_createNote_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -18044,7 +18044,7 @@ sub send_updateNote{
   my $note = shift;
 
   $self->{output}->writeMessageBegin('updateNote', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_updateNote_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_updateNote_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{note} = $note;
   $args->write($self->{output});
@@ -18061,12 +18061,12 @@ sub recv_updateNote{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_updateNote_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_updateNote_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -18099,7 +18099,7 @@ sub send_deleteNote{
   my $guid = shift;
 
   $self->{output}->writeMessageBegin('deleteNote', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_deleteNote_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_deleteNote_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{guid} = $guid;
   $args->write($self->{output});
@@ -18116,12 +18116,12 @@ sub recv_deleteNote{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_deleteNote_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_deleteNote_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -18154,7 +18154,7 @@ sub send_expungeNote{
   my $guid = shift;
 
   $self->{output}->writeMessageBegin('expungeNote', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeNote_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeNote_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{guid} = $guid;
   $args->write($self->{output});
@@ -18171,12 +18171,12 @@ sub recv_expungeNote{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeNote_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeNote_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -18209,7 +18209,7 @@ sub send_expungeNotes{
   my $noteGuids = shift;
 
   $self->{output}->writeMessageBegin('expungeNotes', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeNotes_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeNotes_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{noteGuids} = $noteGuids;
   $args->write($self->{output});
@@ -18226,12 +18226,12 @@ sub recv_expungeNotes{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeNotes_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeNotes_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -18262,7 +18262,7 @@ sub send_expungeInactiveNotes{
   my $authenticationToken = shift;
 
   $self->{output}->writeMessageBegin('expungeInactiveNotes', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeInactiveNotes_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeInactiveNotes_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->write($self->{output});
   $self->{output}->writeMessageEnd();
@@ -18278,12 +18278,12 @@ sub recv_expungeInactiveNotes{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeInactiveNotes_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeInactiveNotes_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -18315,7 +18315,7 @@ sub send_copyNote{
   my $toNotebookGuid = shift;
 
   $self->{output}->writeMessageBegin('copyNote', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_copyNote_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_copyNote_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{noteGuid} = $noteGuid;
   $args->{toNotebookGuid} = $toNotebookGuid;
@@ -18333,12 +18333,12 @@ sub recv_copyNote{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_copyNote_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_copyNote_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -18371,7 +18371,7 @@ sub send_listNoteVersions{
   my $noteGuid = shift;
 
   $self->{output}->writeMessageBegin('listNoteVersions', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_listNoteVersions_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_listNoteVersions_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{noteGuid} = $noteGuid;
   $args->write($self->{output});
@@ -18388,12 +18388,12 @@ sub recv_listNoteVersions{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_listNoteVersions_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_listNoteVersions_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -18434,7 +18434,7 @@ sub send_getNoteVersion{
   my $withResourcesAlternateData = shift;
 
   $self->{output}->writeMessageBegin('getNoteVersion', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNoteVersion_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNoteVersion_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{noteGuid} = $noteGuid;
   $args->{updateSequenceNum} = $updateSequenceNum;
@@ -18455,12 +18455,12 @@ sub recv_getNoteVersion{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNoteVersion_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNoteVersion_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -18501,7 +18501,7 @@ sub send_getResource{
   my $withAlternateData = shift;
 
   $self->{output}->writeMessageBegin('getResource', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResource_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResource_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{guid} = $guid;
   $args->{withData} = $withData;
@@ -18522,12 +18522,12 @@ sub recv_getResource{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResource_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResource_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -18560,7 +18560,7 @@ sub send_getResourceApplicationData{
   my $guid = shift;
 
   $self->{output}->writeMessageBegin('getResourceApplicationData', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceApplicationData_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceApplicationData_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{guid} = $guid;
   $args->write($self->{output});
@@ -18577,12 +18577,12 @@ sub recv_getResourceApplicationData{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceApplicationData_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceApplicationData_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -18617,7 +18617,7 @@ sub send_getResourceApplicationDataEntry{
   my $key = shift;
 
   $self->{output}->writeMessageBegin('getResourceApplicationDataEntry', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceApplicationDataEntry_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceApplicationDataEntry_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{guid} = $guid;
   $args->{key} = $key;
@@ -18635,12 +18635,12 @@ sub recv_getResourceApplicationDataEntry{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceApplicationDataEntry_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceApplicationDataEntry_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -18677,7 +18677,7 @@ sub send_setResourceApplicationDataEntry{
   my $value = shift;
 
   $self->{output}->writeMessageBegin('setResourceApplicationDataEntry', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_setResourceApplicationDataEntry_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_setResourceApplicationDataEntry_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{guid} = $guid;
   $args->{key} = $key;
@@ -18696,12 +18696,12 @@ sub recv_setResourceApplicationDataEntry{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_setResourceApplicationDataEntry_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_setResourceApplicationDataEntry_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -18736,7 +18736,7 @@ sub send_unsetResourceApplicationDataEntry{
   my $key = shift;
 
   $self->{output}->writeMessageBegin('unsetResourceApplicationDataEntry', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_unsetResourceApplicationDataEntry_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_unsetResourceApplicationDataEntry_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{guid} = $guid;
   $args->{key} = $key;
@@ -18754,12 +18754,12 @@ sub recv_unsetResourceApplicationDataEntry{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_unsetResourceApplicationDataEntry_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_unsetResourceApplicationDataEntry_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -18792,7 +18792,7 @@ sub send_updateResource{
   my $resource = shift;
 
   $self->{output}->writeMessageBegin('updateResource', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_updateResource_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_updateResource_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{resource} = $resource;
   $args->write($self->{output});
@@ -18809,12 +18809,12 @@ sub recv_updateResource{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_updateResource_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_updateResource_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -18847,7 +18847,7 @@ sub send_getResourceData{
   my $guid = shift;
 
   $self->{output}->writeMessageBegin('getResourceData', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceData_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceData_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{guid} = $guid;
   $args->write($self->{output});
@@ -18864,12 +18864,12 @@ sub recv_getResourceData{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceData_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceData_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -18910,7 +18910,7 @@ sub send_getResourceByHash{
   my $withAlternateData = shift;
 
   $self->{output}->writeMessageBegin('getResourceByHash', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceByHash_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceByHash_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{noteGuid} = $noteGuid;
   $args->{contentHash} = $contentHash;
@@ -18931,12 +18931,12 @@ sub recv_getResourceByHash{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceByHash_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceByHash_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -18969,7 +18969,7 @@ sub send_getResourceRecognition{
   my $guid = shift;
 
   $self->{output}->writeMessageBegin('getResourceRecognition', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceRecognition_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceRecognition_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{guid} = $guid;
   $args->write($self->{output});
@@ -18986,12 +18986,12 @@ sub recv_getResourceRecognition{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceRecognition_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceRecognition_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -19024,7 +19024,7 @@ sub send_getResourceAlternateData{
   my $guid = shift;
 
   $self->{output}->writeMessageBegin('getResourceAlternateData', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceAlternateData_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceAlternateData_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{guid} = $guid;
   $args->write($self->{output});
@@ -19041,12 +19041,12 @@ sub recv_getResourceAlternateData{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceAlternateData_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceAlternateData_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -19079,7 +19079,7 @@ sub send_getResourceAttributes{
   my $guid = shift;
 
   $self->{output}->writeMessageBegin('getResourceAttributes', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceAttributes_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceAttributes_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{guid} = $guid;
   $args->write($self->{output});
@@ -19096,12 +19096,12 @@ sub recv_getResourceAttributes{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceAttributes_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceAttributes_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -19132,7 +19132,7 @@ sub send_getAccountSize{
   my $authenticationToken = shift;
 
   $self->{output}->writeMessageBegin('getAccountSize', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getAccountSize_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getAccountSize_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->write($self->{output});
   $self->{output}->writeMessageEnd();
@@ -19148,12 +19148,12 @@ sub recv_getAccountSize{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getAccountSize_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getAccountSize_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -19183,7 +19183,7 @@ sub send_getAds{
   my $adParameters = shift;
 
   $self->{output}->writeMessageBegin('getAds', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getAds_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getAds_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{adParameters} = $adParameters;
   $args->write($self->{output});
@@ -19200,12 +19200,12 @@ sub recv_getAds{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getAds_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getAds_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -19235,7 +19235,7 @@ sub send_getRandomAd{
   my $adParameters = shift;
 
   $self->{output}->writeMessageBegin('getRandomAd', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getRandomAd_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getRandomAd_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{adParameters} = $adParameters;
   $args->write($self->{output});
@@ -19252,12 +19252,12 @@ sub recv_getRandomAd{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getRandomAd_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getRandomAd_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -19287,7 +19287,7 @@ sub send_getPublicNotebook{
   my $publicUri = shift;
 
   $self->{output}->writeMessageBegin('getPublicNotebook', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getPublicNotebook_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getPublicNotebook_args->new();
   $args->{userId} = $userId;
   $args->{publicUri} = $publicUri;
   $args->write($self->{output});
@@ -19304,12 +19304,12 @@ sub recv_getPublicNotebook{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getPublicNotebook_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getPublicNotebook_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -19339,7 +19339,7 @@ sub send_createSharedNotebook{
   my $sharedNotebook = shift;
 
   $self->{output}->writeMessageBegin('createSharedNotebook', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_createSharedNotebook_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_createSharedNotebook_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{sharedNotebook} = $sharedNotebook;
   $args->write($self->{output});
@@ -19356,12 +19356,12 @@ sub recv_createSharedNotebook{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_createSharedNotebook_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_createSharedNotebook_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -19398,7 +19398,7 @@ sub send_sendMessageToSharedNotebookMembers{
   my $recipients = shift;
 
   $self->{output}->writeMessageBegin('sendMessageToSharedNotebookMembers', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_sendMessageToSharedNotebookMembers_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_sendMessageToSharedNotebookMembers_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{notebookGuid} = $notebookGuid;
   $args->{messageText} = $messageText;
@@ -19417,12 +19417,12 @@ sub recv_sendMessageToSharedNotebookMembers{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_sendMessageToSharedNotebookMembers_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_sendMessageToSharedNotebookMembers_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -19453,7 +19453,7 @@ sub send_listSharedNotebooks{
   my $authenticationToken = shift;
 
   $self->{output}->writeMessageBegin('listSharedNotebooks', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_listSharedNotebooks_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_listSharedNotebooks_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->write($self->{output});
   $self->{output}->writeMessageEnd();
@@ -19469,12 +19469,12 @@ sub recv_listSharedNotebooks{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_listSharedNotebooks_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_listSharedNotebooks_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -19507,7 +19507,7 @@ sub send_expungeSharedNotebooks{
   my $sharedNotebookIds = shift;
 
   $self->{output}->writeMessageBegin('expungeSharedNotebooks', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeSharedNotebooks_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeSharedNotebooks_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{sharedNotebookIds} = $sharedNotebookIds;
   $args->write($self->{output});
@@ -19524,12 +19524,12 @@ sub recv_expungeSharedNotebooks{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeSharedNotebooks_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeSharedNotebooks_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -19562,7 +19562,7 @@ sub send_createLinkedNotebook{
   my $linkedNotebook = shift;
 
   $self->{output}->writeMessageBegin('createLinkedNotebook', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_createLinkedNotebook_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_createLinkedNotebook_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{linkedNotebook} = $linkedNotebook;
   $args->write($self->{output});
@@ -19579,12 +19579,12 @@ sub recv_createLinkedNotebook{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_createLinkedNotebook_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_createLinkedNotebook_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -19617,7 +19617,7 @@ sub send_updateLinkedNotebook{
   my $linkedNotebook = shift;
 
   $self->{output}->writeMessageBegin('updateLinkedNotebook', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_updateLinkedNotebook_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_updateLinkedNotebook_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{linkedNotebook} = $linkedNotebook;
   $args->write($self->{output});
@@ -19634,12 +19634,12 @@ sub recv_updateLinkedNotebook{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_updateLinkedNotebook_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_updateLinkedNotebook_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -19670,7 +19670,7 @@ sub send_listLinkedNotebooks{
   my $authenticationToken = shift;
 
   $self->{output}->writeMessageBegin('listLinkedNotebooks', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_listLinkedNotebooks_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_listLinkedNotebooks_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->write($self->{output});
   $self->{output}->writeMessageEnd();
@@ -19686,12 +19686,12 @@ sub recv_listLinkedNotebooks{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_listLinkedNotebooks_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_listLinkedNotebooks_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -19724,7 +19724,7 @@ sub send_expungeLinkedNotebook{
   my $guid = shift;
 
   $self->{output}->writeMessageBegin('expungeLinkedNotebook', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeLinkedNotebook_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeLinkedNotebook_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{guid} = $guid;
   $args->write($self->{output});
@@ -19741,12 +19741,12 @@ sub recv_expungeLinkedNotebook{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeLinkedNotebook_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeLinkedNotebook_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -19779,7 +19779,7 @@ sub send_authenticateToSharedNotebook{
   my $authenticationToken = shift;
 
   $self->{output}->writeMessageBegin('authenticateToSharedNotebook', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_authenticateToSharedNotebook_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_authenticateToSharedNotebook_args->new();
   $args->{shareKey} = $shareKey;
   $args->{authenticationToken} = $authenticationToken;
   $args->write($self->{output});
@@ -19796,12 +19796,12 @@ sub recv_authenticateToSharedNotebook{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_authenticateToSharedNotebook_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_authenticateToSharedNotebook_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -19832,7 +19832,7 @@ sub send_getSharedNotebookByAuth{
   my $authenticationToken = shift;
 
   $self->{output}->writeMessageBegin('getSharedNotebookByAuth', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getSharedNotebookByAuth_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getSharedNotebookByAuth_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->write($self->{output});
   $self->{output}->writeMessageEnd();
@@ -19848,12 +19848,12 @@ sub recv_getSharedNotebookByAuth{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getSharedNotebookByAuth_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getSharedNotebookByAuth_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -19886,7 +19886,7 @@ sub send_emailNote{
   my $parameters = shift;
 
   $self->{output}->writeMessageBegin('emailNote', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_emailNote_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_emailNote_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{parameters} = $parameters;
   $args->write($self->{output});
@@ -19903,12 +19903,12 @@ sub recv_emailNote{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_emailNote_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_emailNote_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -19938,7 +19938,7 @@ sub send_shareNote{
   my $guid = shift;
 
   $self->{output}->writeMessageBegin('shareNote', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_shareNote_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_shareNote_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{guid} = $guid;
   $args->write($self->{output});
@@ -19955,12 +19955,12 @@ sub recv_shareNote{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_shareNote_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_shareNote_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -19993,7 +19993,7 @@ sub send_stopSharingNote{
   my $guid = shift;
 
   $self->{output}->writeMessageBegin('stopSharingNote', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_stopSharingNote_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_stopSharingNote_args->new();
   $args->{authenticationToken} = $authenticationToken;
   $args->{guid} = $guid;
   $args->write($self->{output});
@@ -20010,12 +20010,12 @@ sub recv_stopSharingNote{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_stopSharingNote_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_stopSharingNote_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -20045,7 +20045,7 @@ sub send_authenticateToSharedNote{
   my $noteKey = shift;
 
   $self->{output}->writeMessageBegin('authenticateToSharedNote', TMessageType::CALL, $self->{seqid});
-  my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_authenticateToSharedNote_args();
+  my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_authenticateToSharedNote_args->new();
   $args->{guid} = $guid;
   $args->{noteKey} = $noteKey;
   $args->write($self->{output});
@@ -20062,12 +20062,12 @@ sub recv_authenticateToSharedNote{
 
   $self->{input}->readMessageBegin(\$fname, \$mtype, \$rseqid);
   if ($mtype == TMessageType::EXCEPTION) {
-    my $x = new TApplicationException();
+    my $x = TApplicationException->new();
     $x->read($self->{input});
     $self->{input}->readMessageEnd();
     die $x;
   }
-  my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_authenticateToSharedNote_result();
+  my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_authenticateToSharedNote_result->new();
   $result->read($self->{input});
   $self->{input}->readMessageEnd();
 
@@ -20108,7 +20108,7 @@ sub process {
     if (!$self->can($methodname)) {
       $input->skip(TType::STRUCT);
       $input->readMessageEnd();
-      my $x = new TApplicationException('Function '.$fname.' not implemented.', TApplicationException::UNKNOWN_METHOD);
+      my $x = TApplicationException->new('Function '.$fname.' not implemented.', TApplicationException::UNKNOWN_METHOD);
       $output->writeMessageBegin($fname, TMessageType::EXCEPTION, $rseqid);
       $x->write($output);
       $output->writeMessageEnd();
@@ -20121,10 +20121,10 @@ sub process {
 
 sub process_getSyncState {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getSyncState_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getSyncState_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getSyncState_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getSyncState_result->new();
     eval {
       $result->{success} = $self->{handler}->getSyncState($args->authenticationToken);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -20140,10 +20140,10 @@ sub process_getSyncState {
 
 sub process_getSyncChunk {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getSyncChunk_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getSyncChunk_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getSyncChunk_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getSyncChunk_result->new();
     eval {
       $result->{success} = $self->{handler}->getSyncChunk($args->authenticationToken, $args->afterUSN, $args->maxEntries, $args->fullSyncOnly);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -20159,10 +20159,10 @@ sub process_getSyncChunk {
 
 sub process_getFilteredSyncChunk {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getFilteredSyncChunk_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getFilteredSyncChunk_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getFilteredSyncChunk_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getFilteredSyncChunk_result->new();
     eval {
       $result->{success} = $self->{handler}->getFilteredSyncChunk($args->authenticationToken, $args->afterUSN, $args->maxEntries, $args->filter);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -20178,10 +20178,10 @@ sub process_getFilteredSyncChunk {
 
 sub process_getLinkedNotebookSyncState {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getLinkedNotebookSyncState_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getLinkedNotebookSyncState_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getLinkedNotebookSyncState_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getLinkedNotebookSyncState_result->new();
     eval {
       $result->{success} = $self->{handler}->getLinkedNotebookSyncState($args->authenticationToken, $args->linkedNotebook);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -20199,10 +20199,10 @@ sub process_getLinkedNotebookSyncState {
 
 sub process_getLinkedNotebookSyncChunk {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getLinkedNotebookSyncChunk_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getLinkedNotebookSyncChunk_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getLinkedNotebookSyncChunk_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getLinkedNotebookSyncChunk_result->new();
     eval {
       $result->{success} = $self->{handler}->getLinkedNotebookSyncChunk($args->authenticationToken, $args->linkedNotebook, $args->afterUSN, $args->maxEntries, $args->fullSyncOnly);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -20220,10 +20220,10 @@ sub process_getLinkedNotebookSyncChunk {
 
 sub process_listNotebooks {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_listNotebooks_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_listNotebooks_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_listNotebooks_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_listNotebooks_result->new();
     eval {
       $result->{success} = $self->{handler}->listNotebooks($args->authenticationToken);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -20239,10 +20239,10 @@ sub process_listNotebooks {
 
 sub process_getNotebook {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNotebook_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNotebook_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNotebook_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNotebook_result->new();
     eval {
       $result->{success} = $self->{handler}->getNotebook($args->authenticationToken, $args->guid);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -20260,10 +20260,10 @@ sub process_getNotebook {
 
 sub process_getDefaultNotebook {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getDefaultNotebook_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getDefaultNotebook_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getDefaultNotebook_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getDefaultNotebook_result->new();
     eval {
       $result->{success} = $self->{handler}->getDefaultNotebook($args->authenticationToken);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -20279,10 +20279,10 @@ sub process_getDefaultNotebook {
 
 sub process_createNotebook {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_createNotebook_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_createNotebook_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_createNotebook_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_createNotebook_result->new();
     eval {
       $result->{success} = $self->{handler}->createNotebook($args->authenticationToken, $args->notebook);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -20298,10 +20298,10 @@ sub process_createNotebook {
 
 sub process_updateNotebook {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_updateNotebook_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_updateNotebook_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_updateNotebook_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_updateNotebook_result->new();
     eval {
       $result->{success} = $self->{handler}->updateNotebook($args->authenticationToken, $args->notebook);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -20319,10 +20319,10 @@ sub process_updateNotebook {
 
 sub process_expungeNotebook {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeNotebook_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeNotebook_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeNotebook_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeNotebook_result->new();
     eval {
       $result->{success} = $self->{handler}->expungeNotebook($args->authenticationToken, $args->guid);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -20340,10 +20340,10 @@ sub process_expungeNotebook {
 
 sub process_listTags {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_listTags_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_listTags_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_listTags_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_listTags_result->new();
     eval {
       $result->{success} = $self->{handler}->listTags($args->authenticationToken);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -20359,10 +20359,10 @@ sub process_listTags {
 
 sub process_listTagsByNotebook {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_listTagsByNotebook_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_listTagsByNotebook_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_listTagsByNotebook_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_listTagsByNotebook_result->new();
     eval {
       $result->{success} = $self->{handler}->listTagsByNotebook($args->authenticationToken, $args->notebookGuid);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -20380,10 +20380,10 @@ sub process_listTagsByNotebook {
 
 sub process_getTag {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getTag_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getTag_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getTag_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getTag_result->new();
     eval {
       $result->{success} = $self->{handler}->getTag($args->authenticationToken, $args->guid);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -20401,10 +20401,10 @@ sub process_getTag {
 
 sub process_createTag {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_createTag_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_createTag_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_createTag_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_createTag_result->new();
     eval {
       $result->{success} = $self->{handler}->createTag($args->authenticationToken, $args->tag);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -20422,10 +20422,10 @@ sub process_createTag {
 
 sub process_updateTag {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_updateTag_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_updateTag_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_updateTag_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_updateTag_result->new();
     eval {
       $result->{success} = $self->{handler}->updateTag($args->authenticationToken, $args->tag);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -20443,10 +20443,10 @@ sub process_updateTag {
 
 sub process_untagAll {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_untagAll_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_untagAll_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_untagAll_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_untagAll_result->new();
     eval {
       $self->{handler}->untagAll($args->authenticationToken, $args->guid);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -20464,10 +20464,10 @@ sub process_untagAll {
 
 sub process_expungeTag {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeTag_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeTag_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeTag_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeTag_result->new();
     eval {
       $result->{success} = $self->{handler}->expungeTag($args->authenticationToken, $args->guid);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -20485,10 +20485,10 @@ sub process_expungeTag {
 
 sub process_listSearches {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_listSearches_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_listSearches_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_listSearches_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_listSearches_result->new();
     eval {
       $result->{success} = $self->{handler}->listSearches($args->authenticationToken);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -20504,10 +20504,10 @@ sub process_listSearches {
 
 sub process_getSearch {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getSearch_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getSearch_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getSearch_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getSearch_result->new();
     eval {
       $result->{success} = $self->{handler}->getSearch($args->authenticationToken, $args->guid);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -20525,10 +20525,10 @@ sub process_getSearch {
 
 sub process_createSearch {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_createSearch_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_createSearch_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_createSearch_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_createSearch_result->new();
     eval {
       $result->{success} = $self->{handler}->createSearch($args->authenticationToken, $args->search);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -20544,10 +20544,10 @@ sub process_createSearch {
 
 sub process_updateSearch {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_updateSearch_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_updateSearch_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_updateSearch_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_updateSearch_result->new();
     eval {
       $result->{success} = $self->{handler}->updateSearch($args->authenticationToken, $args->search);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -20565,10 +20565,10 @@ sub process_updateSearch {
 
 sub process_expungeSearch {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeSearch_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeSearch_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeSearch_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeSearch_result->new();
     eval {
       $result->{success} = $self->{handler}->expungeSearch($args->authenticationToken, $args->guid);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -20586,10 +20586,10 @@ sub process_expungeSearch {
 
 sub process_findNotes {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_findNotes_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_findNotes_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_findNotes_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_findNotes_result->new();
     eval {
       $result->{success} = $self->{handler}->findNotes($args->authenticationToken, $args->filter, $args->offset, $args->maxNotes);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -20607,10 +20607,10 @@ sub process_findNotes {
 
 sub process_findNoteOffset {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_findNoteOffset_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_findNoteOffset_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_findNoteOffset_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_findNoteOffset_result->new();
     eval {
       $result->{success} = $self->{handler}->findNoteOffset($args->authenticationToken, $args->filter, $args->guid);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -20628,10 +20628,10 @@ sub process_findNoteOffset {
 
 sub process_findNotesMetadata {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_findNotesMetadata_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_findNotesMetadata_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_findNotesMetadata_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_findNotesMetadata_result->new();
     eval {
       $result->{success} = $self->{handler}->findNotesMetadata($args->authenticationToken, $args->filter, $args->offset, $args->maxNotes, $args->resultSpec);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -20649,10 +20649,10 @@ sub process_findNotesMetadata {
 
 sub process_findNoteCounts {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_findNoteCounts_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_findNoteCounts_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_findNoteCounts_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_findNoteCounts_result->new();
     eval {
       $result->{success} = $self->{handler}->findNoteCounts($args->authenticationToken, $args->filter, $args->withTrash);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -20670,10 +20670,10 @@ sub process_findNoteCounts {
 
 sub process_getNote {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNote_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNote_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNote_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNote_result->new();
     eval {
       $result->{success} = $self->{handler}->getNote($args->authenticationToken, $args->guid, $args->withContent, $args->withResourcesData, $args->withResourcesRecognition, $args->withResourcesAlternateData);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -20691,10 +20691,10 @@ sub process_getNote {
 
 sub process_getNoteApplicationData {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNoteApplicationData_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNoteApplicationData_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNoteApplicationData_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNoteApplicationData_result->new();
     eval {
       $result->{success} = $self->{handler}->getNoteApplicationData($args->authenticationToken, $args->guid);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -20712,10 +20712,10 @@ sub process_getNoteApplicationData {
 
 sub process_getNoteApplicationDataEntry {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNoteApplicationDataEntry_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNoteApplicationDataEntry_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNoteApplicationDataEntry_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNoteApplicationDataEntry_result->new();
     eval {
       $result->{success} = $self->{handler}->getNoteApplicationDataEntry($args->authenticationToken, $args->guid, $args->key);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -20733,10 +20733,10 @@ sub process_getNoteApplicationDataEntry {
 
 sub process_setNoteApplicationDataEntry {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_setNoteApplicationDataEntry_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_setNoteApplicationDataEntry_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_setNoteApplicationDataEntry_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_setNoteApplicationDataEntry_result->new();
     eval {
       $result->{success} = $self->{handler}->setNoteApplicationDataEntry($args->authenticationToken, $args->guid, $args->key, $args->value);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -20754,10 +20754,10 @@ sub process_setNoteApplicationDataEntry {
 
 sub process_unsetNoteApplicationDataEntry {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_unsetNoteApplicationDataEntry_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_unsetNoteApplicationDataEntry_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_unsetNoteApplicationDataEntry_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_unsetNoteApplicationDataEntry_result->new();
     eval {
       $result->{success} = $self->{handler}->unsetNoteApplicationDataEntry($args->authenticationToken, $args->guid, $args->key);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -20775,10 +20775,10 @@ sub process_unsetNoteApplicationDataEntry {
 
 sub process_getNoteContent {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNoteContent_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNoteContent_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNoteContent_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNoteContent_result->new();
     eval {
       $result->{success} = $self->{handler}->getNoteContent($args->authenticationToken, $args->guid);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -20796,10 +20796,10 @@ sub process_getNoteContent {
 
 sub process_getNoteSearchText {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNoteSearchText_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNoteSearchText_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNoteSearchText_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNoteSearchText_result->new();
     eval {
       $result->{success} = $self->{handler}->getNoteSearchText($args->authenticationToken, $args->guid, $args->noteOnly, $args->tokenizeForIndexing);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -20817,10 +20817,10 @@ sub process_getNoteSearchText {
 
 sub process_getResourceSearchText {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceSearchText_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceSearchText_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceSearchText_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceSearchText_result->new();
     eval {
       $result->{success} = $self->{handler}->getResourceSearchText($args->authenticationToken, $args->guid);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -20838,10 +20838,10 @@ sub process_getResourceSearchText {
 
 sub process_getNoteTagNames {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNoteTagNames_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNoteTagNames_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNoteTagNames_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNoteTagNames_result->new();
     eval {
       $result->{success} = $self->{handler}->getNoteTagNames($args->authenticationToken, $args->guid);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -20859,10 +20859,10 @@ sub process_getNoteTagNames {
 
 sub process_createNote {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_createNote_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_createNote_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_createNote_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_createNote_result->new();
     eval {
       $result->{success} = $self->{handler}->createNote($args->authenticationToken, $args->note);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -20880,10 +20880,10 @@ sub process_createNote {
 
 sub process_updateNote {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_updateNote_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_updateNote_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_updateNote_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_updateNote_result->new();
     eval {
       $result->{success} = $self->{handler}->updateNote($args->authenticationToken, $args->note);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -20901,10 +20901,10 @@ sub process_updateNote {
 
 sub process_deleteNote {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_deleteNote_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_deleteNote_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_deleteNote_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_deleteNote_result->new();
     eval {
       $result->{success} = $self->{handler}->deleteNote($args->authenticationToken, $args->guid);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -20922,10 +20922,10 @@ sub process_deleteNote {
 
 sub process_expungeNote {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeNote_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeNote_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeNote_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeNote_result->new();
     eval {
       $result->{success} = $self->{handler}->expungeNote($args->authenticationToken, $args->guid);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -20943,10 +20943,10 @@ sub process_expungeNote {
 
 sub process_expungeNotes {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeNotes_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeNotes_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeNotes_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeNotes_result->new();
     eval {
       $result->{success} = $self->{handler}->expungeNotes($args->authenticationToken, $args->noteGuids);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -20964,10 +20964,10 @@ sub process_expungeNotes {
 
 sub process_expungeInactiveNotes {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeInactiveNotes_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeInactiveNotes_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeInactiveNotes_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeInactiveNotes_result->new();
     eval {
       $result->{success} = $self->{handler}->expungeInactiveNotes($args->authenticationToken);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -20983,10 +20983,10 @@ sub process_expungeInactiveNotes {
 
 sub process_copyNote {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_copyNote_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_copyNote_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_copyNote_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_copyNote_result->new();
     eval {
       $result->{success} = $self->{handler}->copyNote($args->authenticationToken, $args->noteGuid, $args->toNotebookGuid);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -21004,10 +21004,10 @@ sub process_copyNote {
 
 sub process_listNoteVersions {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_listNoteVersions_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_listNoteVersions_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_listNoteVersions_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_listNoteVersions_result->new();
     eval {
       $result->{success} = $self->{handler}->listNoteVersions($args->authenticationToken, $args->noteGuid);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -21025,10 +21025,10 @@ sub process_listNoteVersions {
 
 sub process_getNoteVersion {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNoteVersion_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNoteVersion_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNoteVersion_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getNoteVersion_result->new();
     eval {
       $result->{success} = $self->{handler}->getNoteVersion($args->authenticationToken, $args->noteGuid, $args->updateSequenceNum, $args->withResourcesData, $args->withResourcesRecognition, $args->withResourcesAlternateData);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -21046,10 +21046,10 @@ sub process_getNoteVersion {
 
 sub process_getResource {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResource_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResource_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResource_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResource_result->new();
     eval {
       $result->{success} = $self->{handler}->getResource($args->authenticationToken, $args->guid, $args->withData, $args->withRecognition, $args->withAttributes, $args->withAlternateData);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -21067,10 +21067,10 @@ sub process_getResource {
 
 sub process_getResourceApplicationData {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceApplicationData_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceApplicationData_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceApplicationData_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceApplicationData_result->new();
     eval {
       $result->{success} = $self->{handler}->getResourceApplicationData($args->authenticationToken, $args->guid);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -21088,10 +21088,10 @@ sub process_getResourceApplicationData {
 
 sub process_getResourceApplicationDataEntry {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceApplicationDataEntry_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceApplicationDataEntry_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceApplicationDataEntry_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceApplicationDataEntry_result->new();
     eval {
       $result->{success} = $self->{handler}->getResourceApplicationDataEntry($args->authenticationToken, $args->guid, $args->key);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -21109,10 +21109,10 @@ sub process_getResourceApplicationDataEntry {
 
 sub process_setResourceApplicationDataEntry {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_setResourceApplicationDataEntry_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_setResourceApplicationDataEntry_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_setResourceApplicationDataEntry_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_setResourceApplicationDataEntry_result->new();
     eval {
       $result->{success} = $self->{handler}->setResourceApplicationDataEntry($args->authenticationToken, $args->guid, $args->key, $args->value);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -21130,10 +21130,10 @@ sub process_setResourceApplicationDataEntry {
 
 sub process_unsetResourceApplicationDataEntry {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_unsetResourceApplicationDataEntry_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_unsetResourceApplicationDataEntry_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_unsetResourceApplicationDataEntry_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_unsetResourceApplicationDataEntry_result->new();
     eval {
       $result->{success} = $self->{handler}->unsetResourceApplicationDataEntry($args->authenticationToken, $args->guid, $args->key);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -21151,10 +21151,10 @@ sub process_unsetResourceApplicationDataEntry {
 
 sub process_updateResource {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_updateResource_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_updateResource_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_updateResource_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_updateResource_result->new();
     eval {
       $result->{success} = $self->{handler}->updateResource($args->authenticationToken, $args->resource);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -21172,10 +21172,10 @@ sub process_updateResource {
 
 sub process_getResourceData {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceData_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceData_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceData_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceData_result->new();
     eval {
       $result->{success} = $self->{handler}->getResourceData($args->authenticationToken, $args->guid);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -21193,10 +21193,10 @@ sub process_getResourceData {
 
 sub process_getResourceByHash {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceByHash_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceByHash_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceByHash_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceByHash_result->new();
     eval {
       $result->{success} = $self->{handler}->getResourceByHash($args->authenticationToken, $args->noteGuid, $args->contentHash, $args->withData, $args->withRecognition, $args->withAlternateData);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -21214,10 +21214,10 @@ sub process_getResourceByHash {
 
 sub process_getResourceRecognition {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceRecognition_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceRecognition_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceRecognition_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceRecognition_result->new();
     eval {
       $result->{success} = $self->{handler}->getResourceRecognition($args->authenticationToken, $args->guid);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -21235,10 +21235,10 @@ sub process_getResourceRecognition {
 
 sub process_getResourceAlternateData {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceAlternateData_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceAlternateData_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceAlternateData_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceAlternateData_result->new();
     eval {
       $result->{success} = $self->{handler}->getResourceAlternateData($args->authenticationToken, $args->guid);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -21256,10 +21256,10 @@ sub process_getResourceAlternateData {
 
 sub process_getResourceAttributes {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceAttributes_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceAttributes_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceAttributes_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getResourceAttributes_result->new();
     eval {
       $result->{success} = $self->{handler}->getResourceAttributes($args->authenticationToken, $args->guid);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -21277,10 +21277,10 @@ sub process_getResourceAttributes {
 
 sub process_getAccountSize {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getAccountSize_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getAccountSize_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getAccountSize_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getAccountSize_result->new();
     eval {
       $result->{success} = $self->{handler}->getAccountSize($args->authenticationToken);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -21296,10 +21296,10 @@ sub process_getAccountSize {
 
 sub process_getAds {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getAds_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getAds_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getAds_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getAds_result->new();
     eval {
       $result->{success} = $self->{handler}->getAds($args->authenticationToken, $args->adParameters);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -21315,10 +21315,10 @@ sub process_getAds {
 
 sub process_getRandomAd {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getRandomAd_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getRandomAd_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getRandomAd_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getRandomAd_result->new();
     eval {
       $result->{success} = $self->{handler}->getRandomAd($args->authenticationToken, $args->adParameters);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -21334,10 +21334,10 @@ sub process_getRandomAd {
 
 sub process_getPublicNotebook {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getPublicNotebook_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getPublicNotebook_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getPublicNotebook_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getPublicNotebook_result->new();
     eval {
       $result->{success} = $self->{handler}->getPublicNotebook($args->userId, $args->publicUri);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMSystemException') ){ 
@@ -21353,10 +21353,10 @@ sub process_getPublicNotebook {
 
 sub process_createSharedNotebook {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_createSharedNotebook_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_createSharedNotebook_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_createSharedNotebook_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_createSharedNotebook_result->new();
     eval {
       $result->{success} = $self->{handler}->createSharedNotebook($args->authenticationToken, $args->sharedNotebook);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -21374,10 +21374,10 @@ sub process_createSharedNotebook {
 
 sub process_sendMessageToSharedNotebookMembers {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_sendMessageToSharedNotebookMembers_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_sendMessageToSharedNotebookMembers_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_sendMessageToSharedNotebookMembers_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_sendMessageToSharedNotebookMembers_result->new();
     eval {
       $result->{success} = $self->{handler}->sendMessageToSharedNotebookMembers($args->authenticationToken, $args->notebookGuid, $args->messageText, $args->recipients);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -21395,10 +21395,10 @@ sub process_sendMessageToSharedNotebookMembers {
 
 sub process_listSharedNotebooks {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_listSharedNotebooks_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_listSharedNotebooks_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_listSharedNotebooks_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_listSharedNotebooks_result->new();
     eval {
       $result->{success} = $self->{handler}->listSharedNotebooks($args->authenticationToken);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -21416,10 +21416,10 @@ sub process_listSharedNotebooks {
 
 sub process_expungeSharedNotebooks {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeSharedNotebooks_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeSharedNotebooks_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeSharedNotebooks_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeSharedNotebooks_result->new();
     eval {
       $result->{success} = $self->{handler}->expungeSharedNotebooks($args->authenticationToken, $args->sharedNotebookIds);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -21437,10 +21437,10 @@ sub process_expungeSharedNotebooks {
 
 sub process_createLinkedNotebook {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_createLinkedNotebook_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_createLinkedNotebook_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_createLinkedNotebook_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_createLinkedNotebook_result->new();
     eval {
       $result->{success} = $self->{handler}->createLinkedNotebook($args->authenticationToken, $args->linkedNotebook);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -21458,10 +21458,10 @@ sub process_createLinkedNotebook {
 
 sub process_updateLinkedNotebook {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_updateLinkedNotebook_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_updateLinkedNotebook_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_updateLinkedNotebook_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_updateLinkedNotebook_result->new();
     eval {
       $result->{success} = $self->{handler}->updateLinkedNotebook($args->authenticationToken, $args->linkedNotebook);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -21479,10 +21479,10 @@ sub process_updateLinkedNotebook {
 
 sub process_listLinkedNotebooks {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_listLinkedNotebooks_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_listLinkedNotebooks_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_listLinkedNotebooks_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_listLinkedNotebooks_result->new();
     eval {
       $result->{success} = $self->{handler}->listLinkedNotebooks($args->authenticationToken);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -21500,10 +21500,10 @@ sub process_listLinkedNotebooks {
 
 sub process_expungeLinkedNotebook {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeLinkedNotebook_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeLinkedNotebook_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeLinkedNotebook_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_expungeLinkedNotebook_result->new();
     eval {
       $result->{success} = $self->{handler}->expungeLinkedNotebook($args->authenticationToken, $args->guid);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -21521,10 +21521,10 @@ sub process_expungeLinkedNotebook {
 
 sub process_authenticateToSharedNotebook {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_authenticateToSharedNotebook_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_authenticateToSharedNotebook_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_authenticateToSharedNotebook_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_authenticateToSharedNotebook_result->new();
     eval {
       $result->{success} = $self->{handler}->authenticateToSharedNotebook($args->shareKey, $args->authenticationToken);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -21542,10 +21542,10 @@ sub process_authenticateToSharedNotebook {
 
 sub process_getSharedNotebookByAuth {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getSharedNotebookByAuth_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getSharedNotebookByAuth_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_getSharedNotebookByAuth_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_getSharedNotebookByAuth_result->new();
     eval {
       $result->{success} = $self->{handler}->getSharedNotebookByAuth($args->authenticationToken);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -21563,10 +21563,10 @@ sub process_getSharedNotebookByAuth {
 
 sub process_emailNote {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_emailNote_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_emailNote_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_emailNote_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_emailNote_result->new();
     eval {
       $self->{handler}->emailNote($args->authenticationToken, $args->parameters);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -21584,10 +21584,10 @@ sub process_emailNote {
 
 sub process_shareNote {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_shareNote_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_shareNote_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_shareNote_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_shareNote_result->new();
     eval {
       $result->{success} = $self->{handler}->shareNote($args->authenticationToken, $args->guid);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -21605,10 +21605,10 @@ sub process_shareNote {
 
 sub process_stopSharingNote {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_stopSharingNote_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_stopSharingNote_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_stopSharingNote_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_stopSharingNote_result->new();
     eval {
       $self->{handler}->stopSharingNote($args->authenticationToken, $args->guid);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 
@@ -21626,10 +21626,10 @@ sub process_stopSharingNote {
 
 sub process_authenticateToSharedNote {
     my ($self, $seqid, $input, $output) = @_;
-    my $args = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_authenticateToSharedNote_args();
+    my $args = Net::Evernote::Simple::EDAMNoteStore::NoteStore_authenticateToSharedNote_args->new();
     $args->read($input);
     $input->readMessageEnd();
-    my $result = new Net::Evernote::Simple::EDAMNoteStore::NoteStore_authenticateToSharedNote_result();
+    my $result = Net::Evernote::Simple::EDAMNoteStore::NoteStore_authenticateToSharedNote_result->new();
     eval {
       $result->{success} = $self->{handler}->authenticateToSharedNote($args->guid, $args->noteKey);
     }; if( UNIVERSAL::isa($@,'Net::Evernote::Simple::EDAMErrors::Net::Evernote::Simple::EDAMUserException') ){ 

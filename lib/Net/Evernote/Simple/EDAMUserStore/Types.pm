@@ -414,14 +414,14 @@ sub read {
       }
       last; };
       /^4$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{user} = new Net::Evernote::Simple::EDAMTypes::User();
+        $self->{user} = Net::Evernote::Simple::EDAMTypes::User->new();
         $xfer += $self->{user}->read($input);
       } else {
         $xfer += $input->skip($ftype);
       }
       last; };
       /^5$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{publicUserInfo} = new Net::Evernote::Simple::EDAMUserStore::PublicUserInfo();
+        $self->{publicUserInfo} = Net::Evernote::Simple::EDAMUserStore::PublicUserInfo->new();
         $xfer += $self->{publicUserInfo}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -752,7 +752,7 @@ sub read {
       }
       last; };
       /^2$/ && do{      if ($ftype == TType::STRUCT) {
-        $self->{settings} = new Net::Evernote::Simple::EDAMUserStore::BootstrapSettings();
+        $self->{settings} = Net::Evernote::Simple::EDAMUserStore::BootstrapSettings->new();
         $xfer += $self->{settings}->read($input);
       } else {
         $xfer += $input->skip($ftype);
@@ -830,7 +830,7 @@ sub read {
           for (my $_i4 = 0; $_i4 < $_size0; ++$_i4)
           {
             my $elem5 = undef;
-            $elem5 = new Net::Evernote::Simple::EDAMUserStore::BootstrapProfile();
+            $elem5 = Net::Evernote::Simple::EDAMUserStore::BootstrapProfile->new();
             $xfer += $elem5->read($input);
             push(@{$self->{profiles}},$elem5);
           }
