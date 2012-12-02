@@ -6,7 +6,9 @@
 use warnings;
 use strict;
 
-use Test::More qw(no_plan);
-BEGIN { use_ok('Net::Evernote::Simple') };
+use Test::More;
 
+plan tests => 1;
+
+use Net::Evernote::Simple;
 ok(1);
