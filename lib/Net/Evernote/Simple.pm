@@ -16,6 +16,9 @@ use Log::Log4perl qw(:easy);
 use YAML qw( LoadFile );
 use File::Basename;
 use File::Temp qw( tempfile );
+use Thrift;
+use Thrift::HttpClient;
+use Thrift::BinaryProtocol;
 
 our $VERSION = "0.01";
 
@@ -25,10 +28,47 @@ sub new {
     my($class, %options) = @_;
 
     my $self = {
+        evernote_host => "www.evernote.com",
+        consumer_key  => "willywonka",
         %options,
     };
 
+    my $user_store_uri =
+        "https://$self->{ evernote_host }/edam/user";
+
+    my $http_client = 
+        Thrift::HttpClient->new( $user_store_uri );
+
+    my $protocol =
+        Thrift::BinaryProtocol->new( $http_client );
+
+    $self->{ client } =
+        Net::Evernote::Simple::EDAMUserStore::UserStoreClient->new( $protocol );
+
     bless $self, $class;
+}
+
+###########################################
+sub version_check {
+###########################################
+    my( $self ) = @_;
+
+    eval {
+      my $version_ok =
+        $self->{ client }->checkVersion( $self->{ consumer_key },
+          Net::Evernote::Simple::EDAMUserStore::Constants::EDAM_VERSION_MAJOR,
+          Net::Evernote::Simple::EDAMUserStore::Constants::EDAM_VERSION_MINOR,
+        );
+  
+      INFO "Version check returned: $version_ok";
+    };
+
+    if( $@ ) {
+        ERROR Dumper( $@ );
+        return 0;
+    }
+
+    return 1;
 }
 
 1;
