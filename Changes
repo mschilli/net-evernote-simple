@@ -1,5 +1,9 @@
 ######################################################################
 Revision history for Perl extension Net::Evernote::Simple
 
+0.02 (2012/12/02)
+    (ms) Removed generated thrift api code from the manifest, the CPAN 
+         indexer didn't like it
+
 0.01 (2012/12/02)
     (ms) Where it all began.
