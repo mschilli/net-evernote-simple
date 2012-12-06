@@ -21,6 +21,7 @@ WriteMakefile(
         File::Temp    => 0.22,
         Thrift        => 0.6,
     }, # e.g., Module::Name => 1.1
+    $ExtUtils::MakeMaker::VERSION >= 6.50 ? (%$meta_merge) : (),
     ($] >= 5.005 ?    ## Add these new keywords supported since 5.005
       (ABSTRACT_FROM => 'lib/Net/Evernote/Simple.pm',
        AUTHOR     => 'Mike Schilli <cpan@perlmeister.com>') : ()),
