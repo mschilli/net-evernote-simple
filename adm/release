@@ -9,6 +9,6 @@ use strict;
     # Available at http://perlmeister.com/scripts
 use ModDevUtils;
 
-ModDevUtils::release();
+ModDevUtils::release(0);
 
 system( "adm/updreadme" );
