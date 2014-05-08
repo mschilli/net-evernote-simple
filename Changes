@@ -1,6 +1,12 @@
 ######################################################################
 Revision history for Perl extension Net::Evernote::Simple
 
+0.03 (2014/05/07)
+    (ms) Upped Thrift HttpClient default timeout from 100/750ms (send/recv)
+         to 1000/7500ms to deal with WAN delays (default values set by Thrift
+         are suitable for LANs only), erroneously reported as
+         "Missing version identifier" by the Evernote API.
+
 0.02 (2012/12/02)
     (ms) Removed generated thrift api code from the manifest, the CPAN 
          indexer didn't like it
