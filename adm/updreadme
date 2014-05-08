@@ -1,0 +1,13 @@
+#!/usr/bin/perl
+use warnings;
+use strict;
+
+    # Can be obtained from http://perlmeister.com/scripts
+use ModDevUtils;
+
+{
+    no strict;
+    *ModDevUtils::main_pm_file = sub { "lib/Net/Evernote/Simple.pm" };
+}
+
+ModDevUtils::update_readme();
