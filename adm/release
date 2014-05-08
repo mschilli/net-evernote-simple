@@ -9,6 +9,9 @@ use strict;
     # Available at http://perlmeister.com/scripts
 use ModDevUtils;
 
-ModDevUtils::release(0);
+{
+    no strict;
+    *ModDevUtils::main_pm_file = sub { "lib/Net/Evernote/Simple.pm" };
+}
 
-system( "adm/updreadme" );
+ModDevUtils::release(0);
