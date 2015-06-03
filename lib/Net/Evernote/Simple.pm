@@ -21,7 +21,7 @@ use Thrift::HttpClient;
 use Thrift::BinaryProtocol;
 use Data::Dumper;
 
-our $VERSION = "0.03";
+our $VERSION = "0.04";
 
 our $EN_DEV_TOKEN_PAGE = 
     "http://dev.evernote.com/documentation/cloud/chapters/" .
@@ -37,10 +37,12 @@ sub new {
         dev_token           => undef,
         config_file         => undef,
         consumer_key        => undef,
-        thrift_send_timeout => 1000,
-        thrift_recv_timeout => 7500,
+        thrift_send_timeout => 10000,
+        thrift_recv_timeout => 75000,
         %options,
     };
+
+    bless $self, $class;
 
     if( !defined $self->{ consumer_key } ) {
         ( my $dashed_pkg = __PACKAGE__ ) =~ s/::/-/g;
@@ -64,18 +66,14 @@ sub new {
     my $user_store_uri =
         "https://$self->{ evernote_host }/edam/user";
 
-    my $http_client = 
-        Thrift::HttpClient->new( $user_store_uri );
-    $http_client->setSendTimeout( $self->{ thrift_send_timeout } );
-    $http_client->setRecvTimeout( $self->{ thrift_recv_timeout } );
-
+    my $http_client = $self->thrift_http_client( $user_store_uri );
     my $protocol =
         Thrift::BinaryProtocol->new( $http_client );
 
     $self->{ client } =
         Net::Evernote::Simple::EDAMUserStore::UserStoreClient->new( $protocol );
 
-    bless $self, $class;
+    return $self;
 }
 
 ###########################################
@@ -108,6 +106,23 @@ sub dev_token {
 }
 
 ###########################################
+sub thrift_http_client {
+###########################################
+    my( $self, $uri ) = @_;
+
+    my $client = Thrift::HttpClient->new( $uri );
+
+      # Timeouts can't be passed into Thrift::HttpClient's constructor,
+      # so we set them manually here. Thrift's default values
+      # are in the millisecond range and therefore completely out 
+      # of whack unless you have the Evernote server on your LAN.
+    $client->setSendTimeout( $self->{ thrift_send_timeout } );
+    $client->setRecvTimeout( $self->{ thrift_recv_timeout } );
+
+    return $client;
+}
+
+###########################################
 sub note_store {
 ###########################################
     my( $self ) = @_;
@@ -126,7 +141,7 @@ sub note_store {
         return undef;
     }
 
-    my $note_store_client = Thrift::HttpClient->new( $note_store_uri );
+    my $note_store_client = $self->thrift_http_client( $note_store_uri );
 
     my $note_store_protocol = Thrift::BinaryProtocol->new(
        $note_store_client );

@@ -1,6 +1,10 @@
 ######################################################################
 Revision history for Perl extension Net::Evernote::Simple
 
+0.04 (2015/06/02)
+    (ms) Applied previous HttpClient timeout fix to note store client as
+         well. Upped it to 7,500/10,000ms by default.
+
 0.03 (2014/05/07)
     (ms) Upped Thrift HttpClient default timeout from 100/750ms (send/recv)
          to 1000/7500ms to deal with WAN delays (default values set by Thrift
