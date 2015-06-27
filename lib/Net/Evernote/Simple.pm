@@ -21,7 +21,7 @@ use Thrift::HttpClient;
 use Thrift::BinaryProtocol;
 use Data::Dumper;
 
-our $VERSION = "0.04";
+our $VERSION = "0.05";
 
 our $EN_DEV_TOKEN_PAGE = 
     "http://dev.evernote.com/documentation/cloud/chapters/" .
@@ -169,11 +169,32 @@ sub version_check {
     };
 
     if( $@ ) {
-        ERROR Dumper( $@ );
+        LOGWARN Dumper( $@ );
+        $self->horrid_thrift_client_error_diagnostics( $self->{client} );
         return 0;
     }
 
     return 1;
+}
+
+###########################################
+sub horrid_thrift_client_error_diagnostics {
+###########################################
+    my( $self, $client ) = @_;
+
+    # Apparently, there's no way to figure out what went wrong at the
+    # http level once a thrift call fails, except poking around in thrift's
+    # internal structures. Oh, the humanity!
+
+    eval {
+        my $in = $client->{input}->{trans}->{in};
+        $in->setpos(0);
+        LOGWARN join '', <$in>;
+    };
+
+    if( $@ ) {
+        LOGWARN "Unable to diagnose underlying error";
+    }
 }
 
 1;

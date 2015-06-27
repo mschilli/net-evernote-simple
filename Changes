@@ -1,6 +1,12 @@
 ######################################################################
 Revision history for Perl extension Net::Evernote::Simple
 
+https://rt.cpan.org/Public/Bug/Display.html?id=105528
+
+0.05 (2015/06/27)
+    (ms) [rt.cpan.org #105528] Better error message on failing SSL cert
+         checks and other http(s) errors
+
 0.04 (2015/06/02)
     (ms) Applied previous HttpClient timeout fix to note store client as
          well. Upped it to 7,500/10,000ms by default.
