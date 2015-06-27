@@ -1,8 +1,6 @@
 ######################################################################
 Revision history for Perl extension Net::Evernote::Simple
 
-https://rt.cpan.org/Public/Bug/Display.html?id=105528
-
 0.05 (2015/06/27)
     (ms) [rt.cpan.org #105528] Better error message on failing SSL cert
          checks and other http(s) errors
