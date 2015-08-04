@@ -21,7 +21,7 @@ use Thrift::HttpClient;
 use Thrift::BinaryProtocol;
 use Data::Dumper;
 
-our $VERSION = "0.05";
+our $VERSION = "0.06";
 
 our $EN_DEV_TOKEN_PAGE = 
     "http://dev.evernote.com/documentation/cloud/chapters/" .

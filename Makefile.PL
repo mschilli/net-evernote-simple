@@ -19,7 +19,7 @@ WriteMakefile(
         Log::Log4perl => 1.0,
         YAML          => 0.71,
         File::Temp    => 0.22,
-        Thrift        => 0.6,
+        Thrift        => 0.6.1,
     }, # e.g., Module::Name => 1.1
     $ExtUtils::MakeMaker::VERSION >= 6.50 ? (%$meta_merge) : (),
     ($] >= 5.005 ?    ## Add these new keywords supported since 5.005

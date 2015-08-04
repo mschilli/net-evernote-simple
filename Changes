@@ -1,6 +1,11 @@
 ######################################################################
 Revision history for Perl extension Net::Evernote::Simple
 
+0.06 (2015/08/03)
+    (ms) Changed the Thrift dependency from 0.6 to 0.6.1 as discussed in
+         https://github.com/Perl-Toolchain-Gang/CPAN-Meta-Requirements/issues/29
+         and https://github.com/mschilli/net-evernote-simple/issues/2
+
 0.05 (2015/06/27)
     (ms) [rt.cpan.org #105528] Better error message on failing SSL cert
          checks and other http(s) errors
