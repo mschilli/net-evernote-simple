@@ -1,5 +1,5 @@
 ######################################################################
-    Net::Evernote::Simple 0.06
+    Net::Evernote::Simple 0.07
 ######################################################################
 
 NAME
@@ -96,18 +96,54 @@ METHODS
 
     One thing to keep in mind when using this library is that the original
     "EDAMxxx" namespace of the Evernote API has been converted to
-    "Net::Evernote::Simple::EDAMxxx" to avoid collisions. See the example
-    below to get an idea on how to use it. Consult the official Evernote API
-    documentation at the link listed above for details on data structures
-    used and parameters needed.
+    "Net::Evernote::Simple::EDAMxxx" to avoid collisions.
 
-EXAMPLE
-       # add a note with a JPG image to notebook "Recipes"
+    To obtain the fully qualified module names, you can use the special
+    "sdk()" method, so instead of saying
 
-        #!/usr/local/bin/perl
-        use strict;
-        use warnings;
+        my $filter =
+          Net::Evernote::Simple::EDAMNoteStore::NoteFilter->new();
+
+    you can just as well say
+
+        my $filter = $en->sdk( "EDAMNoteStore::NoteFilter" )->new();
+
+    See the example below to get an idea on how to use this API. Consult the
+    official Evernote API documentation at the link listed above for details
+    on data structures used and parameters needed.
+
+EXAMPLE: Finding and printing notes
+        use Net::Evernote::Simple;
+        my $en = Net::Evernote::Simple->new();
     
+        if( ! $en->version_check() ) {
+          die "Evernote API version out of date!";
+        }
+    
+        my $note_store = $en->note_store() or
+           die "getting notestore failed: $@";
+    
+        my $filter = $en->sdk(
+          "EDAMNoteStore::NoteFilter" )->new(
+            { words => "foo bar baz" } );
+    
+        my $offset    = 0;
+        my $max_notes = 100;
+    
+        my $result = $note_store->findNotes(
+            $en->{ dev_token },
+            $filter,
+            $offset,
+            $max_notes
+        );
+    
+        for my $hit ( @{ $result->{ notes } } ) {
+          my $note = $note_store->getNote( 
+           $en->{ dev_token }, $hit->{ guid }, 1 );
+          print $note->{ content };
+        }
+
+EXAMPLE: Add a note with a JPG image to notebook "Recipes"
         use Net::Evernote::Simple;
         use Sysadm::Install qw( slurp );
         use Digest::MD5 qw( md5_hex );

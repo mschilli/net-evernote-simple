@@ -1,4 +1,5 @@
 Changes
+eg/note-find
 eg/note-jpg-add
 lib/Net/Evernote/Simple.pm
 lib/Net/Evernote/Simple/EDAMErrors/Constants.pm
