@@ -1,6 +1,10 @@
 ######################################################################
 Revision history for Perl extension Net::Evernote::Simple
 
+0.08 (2017/07/16)
+    (ms) Updated to Evernote API version 1.25 from 
+         https://github.com/evernote/evernote-sdk-perl
+
 0.07 (2016/09/11)
     (ms) Added sdk() method and more documentation on how to retrieve
     notes.

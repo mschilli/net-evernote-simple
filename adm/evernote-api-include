@@ -14,19 +14,6 @@ use File::Basename;
 use Log::Log4perl qw(:easy);
 Log::Log4perl->easy_init($DEBUG);
 
-for my $module ( qw( UserStore NoteStore Types ) ) {
-    tap "thrift", "-r", "--gen", "perl", "evernote-api/thrift/$module.thrift";
-}
-
-for my $dir ( <../lib/Net/Evernote/Simple/EDAM*> ) {
-    rmf $dir;
-}
-
-for my $dir ( <gen-perl/*> ) {
-    my $base = basename $dir;
-    rename $dir, "../lib/Net/Evernote/Simple/$base";
-}
-
 find sub {
     my $file = $_;
 
